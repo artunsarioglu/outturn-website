@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Outturn — the active decision layer for retail operations</title>
+  <meta name="description" content="AI-native operating decision infrastructure for retail. Outturn starts from issues already visible in planning, allocation and BI, then prevents leakage across ownership, decision, execution and outcome. Every number is computed in code and cited; a human owns every decision." />
+  <meta name="keywords" content="retail decision intelligence, decision layer, decision-to-execution leakage, retail operations AI, stockout risk, allocation decisions, markdown decisions, human-in-the-loop retail AI, agentic merchant" />
+  <link rel="canonical" href="https://getoutturn.ai/" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#F7F2EF" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://getoutturn.ai/" />
+  <meta property="og:title" content="Outturn — from messy retail data to margin-protecting decisions" />
+  <meta property="og:description" content="The active decision layer for retail: detect the fire, reconcile the context, route the decision to its owner, measure whether it paid. In code, cited, human-approved — never a black-box forecast." />
+  <meta property="og:image" content="https://getoutturn.ai/og.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Outturn — the active decision layer for retail operations" />
+  <meta name="twitter:description" content="The gap is not visibility. The gap is decision-to-execution leakage. Outturn closes it — and shows the math on every call." />
+  <meta name="twitter:image" content="https://getoutturn.ai/og.svg" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231A131B'/><rect x='9' y='20' width='5' height='5' fill='%23C9795B'/></svg>" />
+  <link rel="preload" href="fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="styles.css?v=5" />
+  <script>document.documentElement.classList.replace('no-js', 'js');</script>
+
+  <!-- Clean-room JSON-LD: organization only. No ratings, no reviews, no invented stats. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Outturn",
+    "description": "The active decision layer for retail operations — AI-native operating decision infrastructure above planning, allocation and BI that turns visible issues into cited decisions, owned actions and measured commercial outcomes. Deterministic math, per-claim citation and human-approved writes — never a black-box forecast.",
+    "slogan": "The active decision layer for retail operations."
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a class="brand" href="#top" aria-label="Outturn — home">
+        <span class="wordmark">Outturn<span class="dot" aria-hidden="true"></span></span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a class="nav__link" href="#loop">The loop</a>
+        <a class="nav__link" href="#teach">Built-in retail</a>
+        <a class="nav__link" href="#honest">Honest AI</a>
+        <a class="nav__link" href="#faq">FAQ</a>
+      </nav>
+      <a class="btn btn--primary nav__cta" href="#pilot">Request a pilot</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navSheet">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+    <div class="nav__sheet" id="navSheet">
+      <a href="#loop">The loop</a>
+      <a href="#teach">Built-in retail</a>
+      <a href="#honest">Honest AI</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn--primary" href="#pilot">Request a pilot</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <span id="top"></span>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" aria-labelledby="hero-h1">
+      <div class="container hero__inner">
+        <div class="hero__editorial">
+          <p class="eyebrow">AI-native operating decision infrastructure for retail</p>
+          <h1 id="hero-h1">From messy retail data to <em class="em-why">margin-protecting decisions</em>.</h1>
+          <p class="hero__sub">Your planning systems recommend. Your dashboards report. Outturn starts from the fire they already show, assembles the context, routes the decision to a named owner, and measures whether the action paid — while exposing where ownership, approval or execution leaks.</p>
+          <div class="hero__ctas">
+            <a class="btn btn--primary btn--lg" href="#pilot">
+              Request a 4-week pilot
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn--ghost btn--lg" href="#loop">See the decision loop</a>
+          </div>
+          <ul class="hero__chips" aria-label="The guarantees">
+            <li>every number computed in code — and cited</li>
+            <li>a named human owns every decision</li>
+            <li>impact measured, never assumed</li>
+          </ul>
+        </div>
+
+        <!-- THE AHA: one decision record, live through the loop (JS-failsafe) -->
+        <div class="hero__card-wrap">
+          <article class="trace-card" aria-label="Example: a live decision record">
+            <div class="trace-card__kicker"><span class="dot-live" aria-hidden="true"></span> ACTIVE DECISION · RD-0042 · LIVE</div>
+            <div class="ledger-head">
+              <span class="ledger-head__metric">Stockout risk — Harper poplin shirt · Dallas NorthPark</span>
+              <span class="ledger-head__big">$<span class="countup" data-to="45288">45,288</span></span>
+              <span class="ledger-head__ctx">sales at risk — decision routed, awaiting the owner's yes</span>
+            </div>
+            <ul class="stage-rail" aria-label="Decision lifecycle">
+              <li class="stage stage--done">Detected</li>
+              <li class="stage stage--done">Context reconciled</li>
+              <li class="stage stage--done">Scenario prepared</li>
+              <li class="stage stage--now">Routed</li>
+              <li class="stage">Impact measured</li>
+            </ul>
+            <div class="ledger">
+              <div class="driver">
+                <span class="driver__label"><b class="lane lane--go">SIGNAL</b> Dallas sold its last unit — was selling 18 a week</span>
+                <span class="driver__val pos">0 on hand</span>
+                <span class="driver__cite">↳
+                  <button type="button" class="cite-chip" aria-expanded="false" aria-controls="src-hero-1">sales · inventory, reconciled<span class="chip-hint">show the rows</span></button>
+                  <span class="source-row" id="src-hero-1" hidden>
+                    <span class="source-row__inner"><b>sales</b> · Dallas NorthPark · last 28 days · 18/wk · <b>inventory</b> · 0 units on hand since Thursday</span>
+                  </span>
+                </span>
+              </div>
+              <div class="driver">
+                <span class="driver__label"><b class="lane lane--mark">SIGNAL</b> Houston sits on 240 units it sells 6 a week</span>
+                <span class="driver__val">40 wks of stock</span>
+                <span class="driver__cite">↳ same region, one courier run away</span>
+              </div>
+              <div class="driver">
+                <span class="driver__label"><b class="lane lane--hold">SCENARIO</b> Move 54 units Dallas sells that Houston won't</span>
+                <span class="driver__val">$45,288</span>
+                <span class="driver__cite">↳ 18/wk × 17 weeks left × $148 — the transfer executes in <em>your</em> allocation tool</span>
+              </div>
+              <div class="driver driver--muted">
+                <span class="driver__label"><b class="lane lane--human">ROUTED</b> Allocation owns it · buyer notified — context attached</span>
+                <span class="driver__val">1 yes away</span>
+              </div>
+            </div>
+            <p class="trace-card__foot">Demo-seeded figures, not customer data.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== THE GAP ===================== -->
+    <section class="section" id="gap" aria-labelledby="gap-h">
+      <div class="container container--narrow">
+        <header class="section-head reveal">
+          <p class="eyebrow">The problem</p>
+          <h2 class="h-section" id="gap-h">The gap is not visibility. The gap is decision-to-execution leakage.</h2>
+          <p class="lead">Retail teams see the fire in reports. The margin leaks in everything after visibility: gathering the right context, deciding what to do, routing it to whoever can act, tracking that they did — and knowing whether it worked.</p>
+        </header>
+      </div>
+      <div class="container">
+        <div class="wedge__cards stagger">
+          <div class="wedge-card">
+            <p class="wedge-card__label">Context is scattered</p>
+            <p class="wedge-card__text">The six signals a decision needs live in BI dashboards, Excel files, planning tools, Teams threads, emails — and someone's memory. Assembling them is the weekend job nobody invoices.</p>
+            <p class="wedge-card__ex">cover in one tool · open POs in another · the vendor's delay in an inbox</p>
+          </div>
+          <div class="wedge-card">
+            <p class="wedge-card__label">Decisions are unstructured</p>
+            <p class="wedge-card__text">The critical calls happen in side conversations and Monday meetings. The rationale never becomes data — so the same fire gets re-argued from scratch next season.</p>
+            <p class="wedge-card__ex">"didn't we decide this in March?" — nobody can check</p>
+          </div>
+          <div class="wedge-card">
+            <p class="wedge-card__label">Impact is not measured</p>
+            <p class="wedge-card__text">Which decisions were delayed, missed, or executed? Did the transfer protect availability? Did the markdown protect margin? Almost no team can answer with numbers.</p>
+            <p class="wedge-card__ex">approved ≠ executed ≠ worked</p>
+          </div>
+        </div>
+        <blockquote class="pull-quote reveal">Everyone sells you visibility. The margin leaks <em>after</em> visibility.</blockquote>
+      </div>
+    </section>
+
+    <!-- ===================== THE LOOP ===================== -->
+    <section class="section section--tint" id="loop" aria-labelledby="loop-h">
+      <div class="container container--narrow">
+        <header class="section-head reveal">
+          <p class="eyebrow">How it works</p>
+          <h2 class="h-section" id="loop-h">One loop. Five stages. Every fire, every time.</h2>
+          <p class="lead">Every issue becomes a decision record — RD-#### — that moves through the same lifecycle, with the money attached at every stage.</p>
+        </header>
+
+        <div class="steps">
+          <div class="hiw-step reveal">
+            <span class="step-n">1</span>
+            <div>
+              <h3 class="hiw-step__title">Detect / ingest</h3>
+              <p class="hiw-step__body">An existing report or a bounded deterministic check creates the record and preserves when the issue became visible. Separate monitors surface the leakage after visibility: nobody accepts ownership, an approval goes overdue, an approved action never starts, or the outcome is never measured.</p>
+            </div>
+          </div>
+          <div class="hiw-step reveal">
+            <span class="step-n">2</span>
+            <div>
+              <h3 class="hiw-step__title">Reconcile</h3>
+              <p class="hiw-step__body">The context that lives in six places lands on one card: stock cover, sell-through against plan, open orders, supplier lead times — and the vendor email that quietly moved the truck. Every signal cited to its source row or document. Nothing asserted without a receipt.</p>
+            </div>
+          </div>
+          <div class="hiw-step reveal">
+            <span class="step-n">3</span>
+            <div>
+              <h3 class="hiw-step__title">Scenario</h3>
+              <p class="hiw-step__body">Options prepared before anyone asks, from your own playbook: open a transfer scenario, request a buyer review, prepare a markdown review, accept the risk and monitor. Each option carries its arithmetic — never a black-box score.</p>
+            </div>
+          </div>
+          <div class="hiw-step reveal">
+            <span class="step-n">4</span>
+            <div>
+              <h3 class="hiw-step__title">Route</h3>
+              <p class="hiw-step__body">Decisions get owners, not threads. The buyer approves reorders; allocation runs the transfer; store ops confirms the floor. Routed with the full context attached, tracked until the action actually happens — in <em>your</em> systems, with a named approval.</p>
+            </div>
+          </div>
+          <div class="hiw-step reveal">
+            <span class="step-n">5</span>
+            <div>
+              <h3 class="hiw-step__title">Measure</h3>
+              <p class="hiw-step__body">Did it pay? Recovered sales, availability, markdown avoided — measured on your numbers and written back to the record. Delayed and missed actions surface instead of vanishing. The graded history of every call becomes an asset your team owns.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== INSIDE THE PRODUCT (tabbed surfaces) ===================== -->
+    <section class="section" id="product" aria-labelledby="product-h">
+      <div class="container container--narrow">
+        <header class="section-head reveal">
+          <p class="eyebrow">Inside the product</p>
+          <h2 class="h-section" id="product-h">An operating layer, not another dashboard.</h2>
+          <p class="lead">Three surfaces turn retail signals into decisions with owners, actions, and measured commercial impact.</p>
+        </header>
+      </div>
+      <div class="container">
+        <div class="tabs reveal" data-tabs>
+          <div class="tabs__bar" role="tablist" aria-label="Product surfaces">
+            <button type="button" class="tabs__btn is-active" data-tab="fireboard">Retail Fire Board</button>
+            <button type="button" class="tabs__btn" data-tab="copilot">Decision Copilot</button>
+            <button type="button" class="tabs__btn" data-tab="record">Decision Record</button>
+          </div>
+
+          <!-- Surface 1: the Fire Board -->
+          <div class="tabs__panel is-active" data-panel="fireboard">
+            <div class="board">
+              <div class="board__head">
+                <div><b>Retail Fire Board</b><span>every detected issue, decision request, and execution status</span></div>
+                <div class="board__pills"><span class="pill">Week 28</span><span class="pill pill--live">7 active</span></div>
+              </div>
+              <div class="board__scroll">
+                <div class="board__cols">
+                  <div class="bcol">
+                    <p class="bcol__h"><i class="bdot bdot--red"></i>Detected</p>
+                    <div class="bcard"><b>Harper poplin — Dallas stockout risk</b><span>$45.3K sales at risk</span><em class="bchip bchip--red">New</em></div>
+                    <div class="bcard"><b>Aria linen blazer overstock</b><span>$68K markdown exposure</span></div>
+                  </div>
+                  <div class="bcol">
+                    <p class="bcol__h"><i class="bdot bdot--blue"></i>Context reconciled</p>
+                    <div class="bcard"><b>Sutton rebuy — delivery slipped</b><span>vendor email + open PO</span><em class="bchip bchip--blue">6 signals</em></div>
+                  </div>
+                  <div class="bcol">
+                    <p class="bcol__h"><i class="bdot bdot--purple"></i>Scenario prepared</p>
+                    <div class="bcard"><b>Nova midi dress — dead size run</b><span>clear vs. consolidate vs. hold</span><em class="bchip bchip--purple">3 options</em></div>
+                  </div>
+                  <div class="bcol">
+                    <p class="bcol__h"><i class="bdot bdot--amber"></i>Routed</p>
+                    <div class="bcard"><b>Lyra wide-leg denim — rebuy</b><span>buyer approval pending</span><em class="bchip bchip--amber">1.2d</em></div>
+                  </div>
+                  <div class="bcol">
+                    <p class="bcol__h"><i class="bdot bdot--green"></i>Action in progress</p>
+                    <div class="bcard"><b>Harper transfer — 54 units to Dallas</b><span>executing in your allocation tool</span></div>
+                  </div>
+                  <div class="bcol">
+                    <p class="bcol__h"><i class="bdot bdot--green"></i>Impact measured</p>
+                    <div class="bcard"><b>Camden trench — second markdown</b><span>$36K kept vs. outlet bin</span><em class="bchip bchip--green">Closed</em></div>
+                  </div>
+                </div>
+              </div>
+              <p class="board__foot">Demo-seeded figures, not customer data.</p>
+            </div>
+          </div>
+
+          <!-- Surface 2: the Decision Copilot -->
+          <div class="tabs__panel" data-panel="copilot">
+            <div class="chatmock">
+              <p class="chatmock__q">Why is the Harper shirt flagged?</p>
+              <div class="chatmock__a">
+                <p class="chatmock__tag">Decision agent · grounded in RD-0042</p>
+                <p>Dallas NorthPark sold its last unit and was selling <b>18 a week</b>. Houston Galleria, in the same region, holds <b>240 units — 40 weeks of stock</b>. Moving 54 units protects <b>$45,288</b> of season sales; no reorder needed.</p>
+                <div class="chatmock__acts">
+                  <button type="button" class="chatact chatact--go">Open transfer scenario in your allocation tool</button>
+                  <button type="button" class="chatact">Request buyer review</button>
+                  <button type="button" class="chatact">Accept risk and monitor</button>
+                </div>
+              </div>
+              <p class="chatmock__q">Who should decide?</p>
+              <div class="chatmock__a">
+                <p class="chatmock__tag">Decision agent · grounded in RD-0042</p>
+                <p>Transfers are allocation's call, and this one crosses your taught $10K line — so the buyer is notified too. I can route it to <b>allocation</b> with the full context attached.</p>
+                <div class="chatmock__acts"><button type="button" class="chatact chatact--go">Route to allocation ✓</button></div>
+              </div>
+              <p class="board__foot">Grounded in one record: the copilot explains and routes. It never detects, and it never invents a number — every figure above is computed in code and opens to its rows.</p>
+            </div>
+          </div>
+
+          <!-- Surface 3: the Decision Record -->
+          <div class="tabs__panel" data-panel="record">
+            <div class="recordmock">
+              <div class="recordmock__head">
+                <div><b>RD-0042 — Stockout risk · Harper poplin shirt · Dallas NorthPark</b><span>detected Sun 23:41 by <code>never_ship_a_stockout@v3</code> — your rule, your threshold</span></div>
+                <div class="board__pills"><span class="pill pill--live">$45.3K at risk</span></div>
+              </div>
+              <ul class="stage-rail stage-rail--light" aria-label="Decision lifecycle">
+                <li class="stage stage--done">Detected</li>
+                <li class="stage stage--done">Context reconciled</li>
+                <li class="stage stage--done">Scenario prepared</li>
+                <li class="stage stage--now">Routed</li>
+                <li class="stage">Impact measured</li>
+              </ul>
+              <dl class="recordmock__grid">
+                <div><dt>Context — 4 signals, each cited</dt><dd>Dallas: 0 on hand, 18/wk · Houston: 240 units, 6/wk · no open PO · courier run $150</dd></div>
+                <div><dt>Options — your plays, with the math</dt><dd>Transfer 54 units ($45,288 protected) · reorder (lead 2 wks — too slow) · accept &amp; monitor</dd></div>
+                <div><dt>Owner &amp; routing</dt><dd>Allocation owns it · buyer notified over the $10K line · store ops confirms receipt</dd></div>
+                <div><dt>Impact — written back when it lands</dt><dd>Recovered sales, availability, days-to-execution — measured on your numbers, kept forever</dd></div>
+              </dl>
+              <p class="board__foot">Similar past case: RD-0017, June — same store pair, transfer executed in 2 days, sales recovered. The graded history is the asset your team keeps.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONNECTED (integrations) ===================== -->
+    <section class="section section--tint" id="connected" aria-labelledby="conn-h">
+      <div class="container container--narrow">
+        <header class="section-head reveal">
+          <p class="eyebrow">Connected</p>
+          <h2 class="h-section" id="conn-h">Plugged into every system where retail decisions happen.</h2>
+          <p class="lead">An agentic merchant that works in the tools your allocation, merchandising, and buying teams already use — planning, ERP, BI, spreadsheets, chat, email. It reads the context, prepares the decision, and routes it to the owner in the tool where the work actually happens.</p>
+        </header>
+      </div>
+      <div class="container">
+        <div class="tilegrid stagger" aria-label="Systems Outturn connects to">
+          <span class="tile"><i style="--lc:#0FAAFF">SAP</i>SAP</span>
+          <span class="tile"><i style="--lc:#C74634">OR</i>Oracle Retail</span>
+          <span class="tile"><i style="--lc:#0E9F6E">Rx</i>RELEX</span>
+          <span class="tile"><i style="--lc:#1E56A0">BY</i>Blue Yonder</span>
+          <span class="tile"><i style="--lc:#B7791F">BI</i>Power BI</span>
+          <span class="tile"><i style="--lc:#E97627">Tb</i>Tableau</span>
+          <span class="tile"><i style="--lc:#5F6F81">Lk</i>Looker</span>
+          <span class="tile"><i style="--lc:#29B5E8">Sf</i>Snowflake</span>
+          <span class="tile"><i style="--lc:#4285F4">BQ</i>BigQuery</span>
+          <span class="tile"><i style="--lc:#E25A1C">Db</i>Databricks</span>
+          <span class="tile"><i style="--lc:#217346">X</i>Excel</span>
+          <span class="tile"><i style="--lc:#0F9D58">GS</i>Google Sheets</span>
+          <span class="tile"><i style="--lc:#036C70">SP</i>SharePoint</span>
+          <span class="tile"><i style="--lc:#6264A7">T</i>Teams</span>
+          <span class="tile"><i style="--lc:#611F69">#</i>Slack</span>
+          <span class="tile"><i style="--lc:#0078D4">@</i>Outlook</span>
+          <span class="tile"><i style="--lc:#EA4335">M</i>Gmail</span>
+          <span class="tile"><i style="--lc:#2684FF">J</i>Jira</span>
+          <span class="tile"><i style="--lc:#F06A6A">As</i>Asana</span>
+          <span class="tile"><i style="--lc:#1A252C">N</i>Notion</span>
+          <span class="tile"><i style="--lc:#1868DB">Cf</i>Confluence</span>
+          <span class="tile"><i style="--lc:#00A1E0">SF</i>Salesforce</span>
+          <span class="tile"><i style="--lc:#9C6410">POS</i>POS / Store</span>
+          <span class="tile"><i style="--lc:#7B9E3F">S</i>Shopify</span>
+          <span class="tile"><i style="--lc:#EE672F">Mg</i>Magento</span>
+          <span class="tile"><i style="--lc:#7C6F64">EDI</i>Supplier EDI</span>
+        </div>
+
+        <div class="promptbar reveal" aria-label="Example: one decision, across your tools">
+          <p class="promptbar__line">Check <span class="pchip" style="--pc:#B7791F">Power BI</span> sell-through for the <span class="pchip" style="--pc:#8E4FA8">Harper poplin shirt</span>, reconcile with <span class="pchip" style="--pc:#0E9F6E">RELEX</span> stock cover and <span class="pchip" style="--pc:#0FAAFF">SAP</span> open POs, prepare a transfer scenario, and route it to the buyer in <span class="pchip" style="--pc:#6264A7">Teams</span> with the <span class="pchip" style="--pc:#C9795B">sales at risk</span>.</p>
+          <div class="promptbar__input">
+            <span class="promptbar__plus" aria-hidden="true">+</span>
+            <span class="promptbar__ph">Attach: decision memory, past transfers, buyer notes…</span>
+            <span class="btn btn--primary promptbar__run" aria-hidden="true">Run decision ↑</span>
+          </div>
+        </div>
+        <p class="footnote reveal">Illustrative — these are integration targets, not claims. The pilot starts from exports and the tools you already have; deeper connections come after the loop proves itself.</p>
+      </div>
+    </section>
+
+    <!-- ===================== THE LAYER (positioning) ===================== -->
+    <section class="section" id="layer" aria-labelledby="layer-h">
+      <div class="container container--narrow">
+        <header class="section-head reveal">
+          <p class="eyebrow">Where we sit</p>
+          <h2 class="h-section" id="layer-h">Not a forecasting engine. Not a dashboard. Not a task tracker.</h2>
+        </header>
+      </div>
+      <div class="container">
+        <div class="matrix reveal" role="table" aria-label="Positioning">
+          <table>
+            <thead><tr><th>Category</th><th>Where others sit</th><th class="matrix__us">Outturn<span class="dot" aria-hidden="true"></span> — where we sit</th></tr></thead>
+            <tbody>
+              <tr><td>Forecasting / planning systems</td><td>They recommend what should happen.</td><td>We capture what teams actually decide when reality deviates from the plan.</td></tr>
+              <tr><td>BI dashboards</td><td>They show what happened.</td><td>We turn issues into decisions, actions, and measured outcomes.</td></tr>
+              <tr><td>Workflow tools</td><td>They track whether a task was completed.</td><td>We track whether the commercial decision worked.</td></tr>
+              <tr><td>Generic AI assistants</td><td>They summarize information.</td><td>We understand retail decision context, KPI mapping, ownership, and outcome attribution.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="notebar reveal"><b>We do not replace planning or allocation systems.</b> We sit above them as the active decision layer.</p>
+      </div>
+    </section>
+
+    <!-- ===================== RETAIL WORKFLOW PACKS ===================== -->
+    <section class="section section--tint" id="teach" aria-labelledby="teach-h">
+      <div class="container container--narrow">
+        <header class="section-head reveal">
+          <p class="eyebrow">Built-in retail intelligence</p>
+          <h2 class="h-section" id="teach-h">It arrives knowing the workflow. You confirm what makes your company different.</h2>
+          <p class="lead">Every stockout-response pack starts with cited metric definitions, required signals, common actions, ownership patterns and outcome methods. Outturn calibrates the defaults on your data; your team only corrects the parts that truly differ.</p>
+        </header>
+
+        <div class="steps">
+          <div class="hiw-step reveal">
+            <span class="step-n">✎</span>
+            <div>
+              <h3 class="hiw-step__title">Industry definition</h3>
+              <p class="hiw-step__body">The pack begins with a cited definition of the decision, the minimum context required and the commercial outcome to measure.</p>
+            </div>
+          </div>
+          <div class="hiw-step reveal">
+            <span class="step-n">✎</span>
+            <div>
+              <h3 class="hiw-step__title">Segment default</h3>
+              <p class="hiw-step__body">Apparel, grocery and specialty retail do not use identical signals or deadlines. The pack starts from the relevant segment pattern, not a generic prompt.</p>
+            </div>
+          </div>
+          <div class="hiw-step reveal">
+            <span class="step-n">✎</span>
+            <div>
+              <h3 class="hiw-step__title">Deterministic calibration</h3>
+              <p class="hiw-step__body">Your history calibrates thresholds and deadlines in code. The record shows the definition, formula and evidence used — never an unexplained model score.</p>
+            </div>
+          </div>
+          <div class="hiw-step reveal">
+            <span class="step-n">✎</span>
+            <div>
+              <h3 class="hiw-step__title">Retailer correction</h3>
+              <p class="hiw-step__body">If your sell-through includes outlets, Texas transfers use Dallas first, or reorders over $50K need two approvals, your correction becomes a versioned company policy after review.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="taught-diff reveal">
+          <span class="tag-taught">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="11" height="11" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            proposed policy
+          </span>
+          <span class="taught-diff__text"><b>Policy proposal:</b> increase minimum donor coverage from 82% to 88% — based on two negatively affected donor stores, with replay, trade-off and affected scope shown before approval.</span>
+        </div>
+
+        <p class="honesty reveal">A policy proposal must explain <em>why</em>: the Decision Records that triggered it, how those cases replay under the new rule, the expected benefit and downside, where it would apply and what the evidence cannot yet prove. Nothing changes until a human approves it.</p>
+      </div>
+    </section>
+
+    <!-- ===================== HONEST AI ===================== -->
+    <section class="section section--ink" id="honest" aria-labelledby="honest-h">
+      <div class="container container--narrow">
+        <header class="section-head reveal">
+          <p class="eyebrow">Honest AI — our favorite sales pitch</p>
+          <h2 class="h-section" id="honest-h">No black-box forecasts. No autonomous agents inside your systems. The math is published.</h2>
+          <p class="lead">AI models are not reliable reasoners — they are excellent accelerators and researchers. So no model ever computes your money. It appears exactly three times: reading and reconciling messy sources, proposing scenarios and rules a human adopts or edits, and narrating results after the numbers are final.</p>
+        </header>
+
+        <div class="reveal">
+          <article class="recon-ledger" aria-label="The layer knows when not to act — example">
+            <p class="recon-ledger__q">The part that earns trust: the layer knows when <em>not</em> to act.</p>
+            <div class="ledger">
+              <div class="driver">
+                <span class="driver__label"><b class="lane lane--hold">ON HOLD</b> Miller graphic tee — don't decide on bad numbers</span>
+                <span class="driver__val">$32,640</span>
+                <span class="driver__cite">↳
+                  <button type="button" class="cite-chip" aria-expanded="false" aria-controls="src-ev-2">Chicago's Saturday file: 388 rows of 1,340 expected<span class="chip-hint">show the rows</span></button>
+                  <span class="source-row" id="src-ev-2" hidden>
+                    <span class="source-row__inner"><b>feed_log</b> · Chicago State St · 2026-07-04 · 388 of 1,340 rows · status <b>partial</b> — every decision priced off Chicago waits for the file, not the guess</span>
+                  </span>
+                </span>
+              </div>
+              <div class="driver">
+                <span class="driver__label"><b class="lane lane--human">NEEDS A HUMAN</b> Vega crop cardigan — no rule explains it</span>
+                <span class="driver__val">$22,080</span>
+                <span class="driver__cite">↳
+                  <button type="button" class="cite-chip" aria-expanded="false" aria-controls="src-ev-3">205/week until mid-June · 34/week since<span class="chip-hint">show the rows</span></button>
+                  <span class="source-row" id="src-ev-3" hidden>
+                    <span class="source-row__inner"><b>sales</b> · 205/wk → 34/wk in two weeks · <b>price_changes</b> · none · <b>inventory</b> · sizes full. A style doesn't lose 83% of its sales for no reason — a human looks before anyone prices.</span>
+                  </span>
+                </span>
+              </div>
+              <div class="driver driver--muted">
+                <span class="driver__label">210 styles trading to plan — nothing needed, nobody paged</span>
+                <span class="driver__val">✓</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="govbar reveal">
+          <span>read-only queries, enforced</span>
+          <span>zero model calls in the decision math</span>
+          <span>human-approved writes</span>
+          <span>append-only audit log</span>
+        </div>
+        <p class="honesty reveal">"AI can't reason" is a contested claim, and we don't make it. Ours is narrower and holds up: today's models are not <em>reliable</em> reasoners — so we keep them out of the loop that computes your money entirely. Call it an agentic merchant if you like; we call it code you can audit.</p>
+      </div>
+    </section>
+
+    <!-- ===================== ROI ===================== -->
+    <section class="section" id="roi" aria-labelledby="roi-h">
+      <div class="container container--narrow">
+        <header class="section-head reveal">
+          <p class="eyebrow">ROI</p>
+          <h2 class="h-section" id="roi-h">ROI starts with decision leakage.</h2>
+          <p class="lead">The stockout is the source issue. We measure what fails after it becomes visible — ownership, context, approval, execution and outcome — then close that leakage.</p>
+        </header>
+      </div>
+      <div class="container">
+        <div class="roi reveal">
+          <div class="roi__sample">
+            <div class="roi__samplehead">
+              <b>Sample 4-week pilot</b>
+              <span class="pill pill--live">Action completion 68% → 84%</span>
+            </div>
+            <div class="roi__stats">
+              <div class="stat"><b>78</b><span>issues detected</span></div>
+              <div class="stat"><b>42</b><span>decisions required</span></div>
+              <div class="stat"><b>16</b><span>delayed or missed actions</span></div>
+              <div class="stat"><b>$240K</b><span>sales at risk</span></div>
+              <div class="stat"><b>$78K</b><span>recovered or protected margin</span></div>
+              <div class="stat"><b>31h</b><span>manual follow-up saved</span></div>
+            </div>
+            <p class="roi__foot">Illustrative sample — not customer results, and we'll never pretend otherwise. Your report is computed from your own sales, inventory, margin, and demand assumptions.</p>
+          </div>
+          <div class="roi__proxy">
+            <p class="roi__cap">Commercial risk proxy</p>
+            <div class="formula--light">
+              <code>sales_at_risk = recent_sales_velocity<br />&nbsp;&nbsp;× expected_stockout_gap<br />&nbsp;&nbsp;× selling_price</code>
+              <code>gross_margin_at_risk = sales_at_risk<br />&nbsp;&nbsp;× gross_margin_%</code>
+            </div>
+            <p class="roi__note">Grounded in your existing sell-through, cover, and margin assumptions — not a black-box forecast. If you can't recompute our number from your rows, we've failed.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PILOT ===================== -->
+    <section class="section section--gray" id="pilot" aria-labelledby="pilot-h">
+      <div class="container">
+        <div class="demo__inner">
+          <div class="demo__pitch reveal">
+            <p class="eyebrow">The 4-week decision-leakage pilot</p>
+            <h2 class="h-section" id="pilot-h">Start by measuring the leak.</h2>
+            <p class="lead">No heavy IT integration. Week one starts from existing reports, Excel exports, and the Teams threads where your decisions already happen.</p>
+            <ul class="demo__perks">
+              <li><b>Week 1</b> — map your store-stockout response workflow and connect the signals</li>
+              <li><b>Week 2</b> — open live stockout records, assemble cited context, stand up the board</li>
+              <li><b>Week 3</b> — your operators run the workflow; Outturn observes product gaps without joining the daily decision loop</li>
+              <li><b>Week 4</b> — continue vendor-independent operation and review decision lead time, delayed or missed actions and agreed commercial outcomes</li>
+            </ul>
+            <p class="demo__reassure">We publish metric definitions, not invented results — the first pilot numbers you'll ever see from us will be your own. Built by an operator who has built and run a production retail-ops AI system; independent and clean-room. No logos or outcome claims here until a customer earns them and consents in writing.</p>
+          </div>
+
+          <div class="demo__form-wrap reveal">
+            <!--
+              TODO(backend): wire this form to a real endpoint or Calendly before launch.
+              Currently client-only — no data is transmitted or stored. Success is simulated.
+            -->
+            <div class="form-card">
+              <form id="demoForm" novalidate>
+                <div class="field">
+                  <label for="f-name">Name <span class="req" aria-hidden="true">*</span></label>
+                  <input type="text" id="f-name" name="name" placeholder="Your name" autocomplete="name" required aria-describedby="e-name" />
+                  <p class="field__error" id="e-name">Please enter your name.</p>
+                </div>
+                <div class="field">
+                  <label for="f-email">Work email <span class="req" aria-hidden="true">*</span></label>
+                  <input type="email" id="f-email" name="email" placeholder="you@company.com" autocomplete="email" required aria-describedby="e-email" />
+                  <p class="field__error" id="e-email">Please enter a valid work email.</p>
+                </div>
+                <div class="field">
+                  <label for="f-company">Company <span class="req" aria-hidden="true">*</span></label>
+                  <input type="text" id="f-company" name="company" placeholder="Where you work" autocomplete="organization" required aria-describedby="e-company" />
+                  <p class="field__error" id="e-company">Please enter your company.</p>
+                </div>
+                <div class="field">
+                  <label for="f-role">Role <span class="req" aria-hidden="true">*</span></label>
+                  <input type="text" id="f-role" name="role" placeholder="e.g. Allocation Manager, Head of Buying, COO" autocomplete="organization-title" required aria-describedby="e-role" />
+                  <p class="field__error" id="e-role">Please tell us your role.</p>
+                </div>
+                <div class="field field--emphasis">
+                  <label for="f-incident">Tell us about the last fire that cost you margin — what was decided, who owned it, and did anyone measure the outcome? <span class="req" aria-hidden="true">*</span></label>
+                  <textarea id="f-incident" name="incident" rows="3" placeholder="One line is fine. This is the question that matters." required aria-describedby="e-incident"></textarea>
+                  <p class="field__error" id="e-incident">A sentence or two helps us prepare a relevant pilot.</p>
+                </div>
+                <!-- honeypot: off-screen, ignored by humans, catches bots -->
+                <div class="hp" aria-hidden="true"><label for="f-company-url">Company URL</label><input type="text" id="f-company-url" name="company_url" tabindex="-1" autocomplete="off" /></div>
+
+                <button type="submit" class="btn btn--primary form-card__submit" id="demoSubmit">Request a pilot</button>
+                <p class="form-card__fine">We only use this to evaluate fit and reply — from a real person, not a sequence.</p>
+              </form>
+
+              <!-- Success state is simulated client-side. Wire to backend/Calendly before launch; until then nothing is stored or sent. -->
+              <div class="form-success" id="demoSuccess" hidden>
+                <span class="form-success__check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                <h3>Request received.</h3>
+                <p>If it's a fit, you'll hear from a real person within a couple of working days.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section class="section" id="faq" aria-labelledby="faq-h">
+      <div class="container container--narrow">
+        <header class="section-head reveal">
+          <p class="eyebrow">FAQ</p>
+          <h2 class="h-section" id="faq-h">What your operators — and your security team — will ask.</h2>
+        </header>
+        <div class="faq__list">
+          <details class="faq-item">
+            <summary>Is it autonomous? Does it act inside my systems?<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <p class="faq-item__answer">No — by design. Outturn ingests the visible issue, assembles the context, prepares options and routes a human-owned decision. The approved action executes in your existing systems: the transfer runs in your allocation tool, the reorder goes to your buyer. We record it to completion; we do not improvise actions through your systems.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do you forecast demand?<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <p class="faq-item__answer">Never. The risk math is published arithmetic over your own sell-through, cover, and margin assumptions — not a black-box forecast. If your planning system forecasts, we happily read its output as one more signal. We compete with nobody's demand model.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How do I know it's not hallucinating my numbers?<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <p class="faq-item__answer">Because no model computes them. Ingestion checks, leakage monitors and decision math run as deterministic code; every number carries its formula and opens to its source rows. Models may extract from messy documents or draft a proposal. Extracted, conflicting or unusual facts require review.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is this another dashboard?<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <p class="faq-item__answer">No. Dashboards show what happened; the leak starts after visibility. Outturn turns each issue into a decision record with an owner, options, a deadline, and — the part nothing else does — a measured outcome. It's an operating layer: things move through it, they aren't just displayed on it.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Does it replace our planning or allocation systems?<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <p class="faq-item__answer">No — it sits above them and makes them worth more. Their recommendations become signals on the record; their screens are where approved actions execute. We also catch the seams between them: the allocation built on a delivery that slipped, the plan that disagrees with the warehouse.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do we have to teach it everything first?<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <p class="faq-item__answer">No. It arrives with a Retail Workflow Pack: cited metric definitions, required signals, deterministic checks, common response options, ownership patterns and outcome measures. Your team confirms only company-specific differences. Approved corrections become versioned policy; they are not prompt memory.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What data does it need to start?<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <p class="faq-item__answer">What you already have: the stockout or availability report plus sales, stock, inbound and transfer exports at the relevant product-location grain. Authoritative structured fields flow through governed contracts; forwarded emails and notices are cited but reviewed when they introduce a new or conflicting fact. No heavy integration for the pilot.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Where does our data go?<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <p class="faq-item__answer">Per-tenant isolation, your choice of EU/US residency, a zero-retention option, and no shared models trained on your data. Read-only by default; writes leave as drafts with a named approval. Full audit trail, kill switch. We'll run a security review with your team before any data is connected.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What does it cost?<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <p class="faq-item__answer">The four-week pilot is $6–8K for one stockout/action-leakage workflow, normally creditable against the first annual subscription. After that: a predictable, capacity-based subscription, not token pass-through.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <span class="wordmark">Outturn<span class="dot" aria-hidden="true"></span></span>
+        <p class="footer__tagline">The active decision layer for retail operations — above planning, allocation, and BI: preparing context, routing ownership, measuring commercial impact.</p>
+      </div>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#loop">The loop</a>
+        <a href="#teach">Built-in retail</a>
+        <a href="#honest">Honest AI</a>
+        <a href="#faq">FAQ</a>
+        <a href="#pilot">Request a pilot</a>
+      </nav>
+    </div>
+    <div class="container footer__bottom">
+      <p>Independent, clean-room build — onboarding first design partners. No invented customers or outcome claims; every number on this page is demo-seeded, a published formula, or a clearly-labeled illustrative sample, and any market or competitor observation is based on public materials.</p>
+      <p>© 2026 Outturn. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js?v=5"></script>
+</body>
+</html>

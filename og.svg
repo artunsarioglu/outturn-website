@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1A131B"/>
+      <stop offset="0.62" stop-color="#281D29"/>
+      <stop offset="1" stop-color="#1A131B"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.85" cy="0.12" r="0.5">
+      <stop offset="0" stop-color="#C9795B" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#C9795B" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- faint columnar grid -->
+  <g stroke="#FBF7F3" stroke-opacity="0.045">
+    <line x1="80" y1="0" x2="80" y2="630"/><line x1="136" y1="0" x2="136" y2="630"/>
+    <line x1="192" y1="0" x2="192" y2="630"/><line x1="248" y1="0" x2="248" y2="630"/>
+    <line x1="304" y1="0" x2="304" y2="630"/><line x1="360" y1="0" x2="360" y2="630"/>
+    <line x1="416" y1="0" x2="416" y2="630"/><line x1="472" y1="0" x2="472" y2="630"/>
+  </g>
+
+  <!-- wordmark -->
+  <g transform="translate(80,92)">
+    <text x="0" y="0" fill="#FBF7F3" font-size="40" font-weight="700">Outturn</text>
+    <circle cx="160" cy="-11" r="6" fill="#C9795B"/>
+  </g>
+
+  <!-- headline -->
+  <text x="80" y="220" fill="#FBF7F3" font-size="58" font-weight="700" letter-spacing="-1.5">Retail sees the fire.</text>
+  <text x="80" y="290" fill="#C9795B" font-size="58" font-weight="700" letter-spacing="-1.5">Outturn runs what happens next.</text>
+
+  <!-- a Decision Record, as the product renders it -->
+  <g transform="translate(80,380)" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+    <rect x="0" y="0" width="1040" height="150" rx="18" fill="#281D29" stroke="#443244" stroke-opacity="0.72"/>
+    <text x="28" y="40" fill="#B7A8B3" font-size="17" letter-spacing="1">RD-1042 · STORE STOCKOUT RESPONSE · ACTION DUE 14:00</text>
+    <text x="28" y="84" fill="#FBF7F3" font-size="24" font-weight="700" font-family="Inter, -apple-system, sans-serif">Visible issue → cited context → owned decision → measured outcome</text>
+    <text x="1012" y="40" fill="#E8B69F" font-size="22" font-weight="700" text-anchor="end">$82.4K AT RISK</text>
+    <text x="28" y="119" fill="#B7A8B3" font-size="17">Every number computed in code · every write approved · impact measured, never assumed</text>
+  </g>
+
+  <!-- positioning line -->
+  <text x="80" y="586" fill="#B7A8B3" font-size="22">Models research. Code calculates. People decide.</text>
+</svg>
