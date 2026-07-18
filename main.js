@@ -274,6 +274,7 @@
       var data = new FormData(form);
       data.delete('company_url');
       data.append('_subject', 'Pilot request — getoutturn.ai');
+      data.append('_cc', 'artun@getoutturn.ai,elif@getoutturn.ai');
 
       fetch('https://formsubmit.co/ajax/hello@getoutturn.ai', {
         method: 'POST',
