@@ -70,7 +70,8 @@ button{font:inherit}
 .nav__inner{display:flex;align-items:center;gap:2rem;padding-top:.7rem;padding-bottom:.7rem}
 .wordmark{font-weight:700;font-size:1.25rem;letter-spacing:-.02em;color:var(--black);text-decoration:none;white-space:nowrap}
 .wordmark .dot{display:inline-block;width:.3rem;height:.3rem;border-radius:50%;background:var(--accent);margin-left:.14rem}
-.brand{text-decoration:none}
+.brand{display:flex;align-items:center;text-decoration:none;flex-shrink:0}
+.brand__logo{display:block;width:9.4rem;height:auto}
 .nav__links{display:flex;gap:1.7rem;margin-left:auto}
 .nav__link{font-size:.86rem;font-weight:500;color:var(--muted);text-decoration:none;transition:color .15s}
 .nav__link:hover,.nav__link.active{color:var(--black)}
@@ -149,8 +150,12 @@ button{font:inherit}
 .wedge__cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
 .wedge-card{background:var(--gray);border-radius:var(--r);padding:1.7rem 1.6rem}
 .wedge-card__label{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;font-weight:600;color:var(--black);margin-bottom:.7rem}
+.wedge-card__stat{font-size:clamp(2.35rem,4.2vw,3.25rem);font-weight:700;letter-spacing:-.045em;line-height:1;color:var(--black);margin:.15rem 0 1rem}
+.wedge-card__stat span{display:block;font-size:.72rem;letter-spacing:.015em;color:var(--accent-text);margin-top:.45rem;font-weight:650}
 .wedge-card__text{color:var(--muted);font-size:.93rem}
 .wedge-card__ex{font-family:var(--mono);font-size:.68rem;color:var(--faint);margin-top:1.2rem}
+.wedge-card__ex a{text-decoration-color:var(--line-strong);text-underline-offset:3px}
+.wedge-card__ex a:hover{color:var(--accent-text);text-decoration-color:var(--accent)}
 .pull-quote{font-size:clamp(1.3rem,2.7vw,1.8rem);font-weight:600;letter-spacing:-.02em;line-height:1.35;
   color:var(--black);max-width:32ch;margin:clamp(3rem,6vw,4.5rem) auto 0;text-align:center;padding:0 1rem}
 @media(max-width:840px){.wedge__cards{grid-template-columns:1fr}}
