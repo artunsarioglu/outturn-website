@@ -274,9 +274,9 @@
       var data = new FormData(form);
       data.delete('company_url');
       data.append('_subject', 'Pilot request — getoutturn.ai');
-      data.append('_cc', 'artun@getoutturn.ai,elif@getoutturn.ai');
+      data.append('_cc', 'elif@getoutturn.ai');
 
-      fetch('https://formsubmit.co/ajax/hello@getoutturn.ai', {
+      fetch('https://formsubmit.co/ajax/artun@getoutturn.ai', {
         method: 'POST',
         headers: { 'Accept': 'application/json' },
         body: data
@@ -296,7 +296,7 @@
           err = document.createElement('p');
           err.className = 'form-card__error';
           err.setAttribute('role', 'alert');
-          err.innerHTML = 'Something went wrong sending this — please email us directly at <a href="mailto:hello@getoutturn.ai">hello@getoutturn.ai</a>.';
+          err.innerHTML = 'Something went wrong sending this — please email us directly at <a href="mailto:artun@getoutturn.ai">artun@getoutturn.ai</a>.';
           submitBtn.insertAdjacentElement('afterend', err);
         }
       });
