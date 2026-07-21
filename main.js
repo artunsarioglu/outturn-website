@@ -1,5 +1,5 @@
 /* =========================================================================
-   Outturn — marketing site behavior (vanilla, progressive enhancement)
+   Outturn - marketing site behavior (vanilla, progressive enhancement)
    The page is fully readable, navigable, and the "aha" comprehensible with
    JS disabled (everything renders in final/resolved state). JS only adds:
    reveals, count-up, the citation expand toggle, the run-console playback,
@@ -11,7 +11,7 @@
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ----------------------------------------------------------------------
-     Resolvable citation chips — the "click the evidence" mechanic.
+     Resolvable citation chips - the "click the evidence" mechanic.
      Reveal the source-row panel that is present-but-hidden in the HTML.
      ---------------------------------------------------------------------- */
   function initCitations() {
@@ -40,7 +40,7 @@
   }
 
   /* ----------------------------------------------------------------------
-     Count-up — a true reconciliation tick on the headline number(s).
+     Count-up - a true reconciliation tick on the headline number(s).
      Elements: .countup with data-to="<integer>".
      ---------------------------------------------------------------------- */
   function fmt(n) { return Math.round(n).toLocaleString('en-US'); }
@@ -62,7 +62,7 @@
   }
 
   /* ----------------------------------------------------------------------
-     Run console — port of the product playSteps(): tick lines green in
+     Run console - port of the product playSteps(): tick lines green in
      sequence. The lines render visible by default (failsafe); we stage them
      only when JS is present, then play on scroll-in.
      ---------------------------------------------------------------------- */
@@ -208,7 +208,7 @@
   }
 
   /* ----------------------------------------------------------------------
-     Book-a-demo form — validation + simulated success.
+     Book-a-demo form - validation + simulated success.
      NO network call. See the TODO(backend) comment in index.html.
      ---------------------------------------------------------------------- */
   function initForm() {
@@ -273,7 +273,7 @@
 
       var data = new FormData(form);
       data.delete('company_url');
-      data.append('_subject', 'Pilot request — getoutturn.ai');
+      data.append('_subject', 'Pilot request - getoutturn.ai');
       data.append('_cc', 'elif@getoutturn.ai');
 
       fetch('https://formsubmit.co/ajax/artun@getoutturn.ai', {
@@ -296,7 +296,7 @@
           err = document.createElement('p');
           err.className = 'form-card__error';
           err.setAttribute('role', 'alert');
-          err.innerHTML = 'Something went wrong sending this — please email us directly at <a href="mailto:artun@getoutturn.ai">artun@getoutturn.ai</a>.';
+          err.innerHTML = 'Something went wrong sending this - please email us directly at <a href="mailto:artun@getoutturn.ai">artun@getoutturn.ai</a>.';
           submitBtn.insertAdjacentElement('afterend', err);
         }
       });
@@ -319,7 +319,7 @@
 })();
 
 /* =========================================================================
-   Live scroll demo (#demo) — scrollytelling + a genuinely interactive panel.
+   Live scroll demo (#demo) - scrollytelling + a genuinely interactive panel.
    The narration column drives the pinned panel's stage via IntersectionObserver;
    inside the panel: source chips, calculation toggle, option pills that change
    the money (and the measured outcome), approve → route → auto-advance.
@@ -343,12 +343,12 @@
   function $(id) { return document.getElementById(id); }
 
   /* ---- the broken-set case: trousers selling, matching vest gone in 9
-     stores. The two options are the online-floor call — 65% (the company
+     stores. The two options are the online-floor call - 65% (the company
      rule) vs a more conservative 70%. Switching updates decision, execution,
-     and measured outcome — the record tracks whether the *decision* worked,
+     and measured outcome - the record tracks whether the *decision* worked,
      not just the task. ---- */
   var SOURCES = [
-    'POS · 09:12 · 312 trousers selling in the 9 stores — 1 in 4 buyers adds the vest.',
+    'POS · 09:12 · 312 pants selling in the 9 stores. 1 in 4 buyers adds the vest.',
     'Inventory · 09:14 · Vest on hand across the 9 stores: 0.',
     'E-commerce · 09:15 · 184 vests sellable online.',
     'Email · 08:46 · E-commerce lead: at least 65% of vest stock must stay sellable online.',
@@ -357,11 +357,11 @@
 
   var OPTIONS = [
     {
-      rec: 'Send 64 vests to the 9 stores — the trousers sell them as sets; online keeps its floor.',
+      rec: 'Send 64 vests to the 9 stores. The pants sell them as sets; online keeps its floor.',
       protectedVal: '$22,336',
       deadline: 'Today, 16:00',
       checks: [
-        ['Online floor is protected', '120 vests stay online · 65.2% — above your 65% rule.', false],
+        ['Online floor is protected', '120 vests stay online · 65.2%. Above your 65% rule.', false],
         ['Cost within policy', '$980 across 9 store shipments · 4.4% of the value protected.', false],
         ['Sources are current', 'All 5 sources refreshed this morning.', false]
       ],
@@ -371,36 +371,36 @@
       owner: 'Store ops confirming receipt',
       execStatus: '61 of 64 shipped on today’s runs; 3 being resolved.',
       outcome: '+$18,846',
-      caption: '7-day sales from the transferred vests — observed, not a causal claim · and the trousers they complete keep selling.',
+      caption: '7-day sales from the transferred vests. Observed, not a causal claim. The pants they complete keep selling.',
       bars: [
         ['Arrived in the 9 stores', '61 / 64', 95],
         ['Vests sold in 7 days', '54 / 61', 88],
         ['Online stock kept', '120 · 65.2%', 65]
       ],
-      toast: 'Approved — 64 vests routed to store ops with the context attached.'
+      toast: 'Approved. 64 vests routed to store ops with the context attached.'
     },
     {
-      rec: 'Send 55 vests — online keeps 70%, stores complete fewer sets.',
+      rec: 'Send 55 vests. Online keeps 70%, stores complete fewer sets.',
       protectedVal: '$19,195',
       deadline: 'Today, 16:00',
       checks: [
-        ['Extra online cover', '129 vests stay online · 70.1% — room above the rule.', false],
-        ['Fewer sets completed', '9 fewer vests where the trousers are selling — $3,141 less protected.', true],
+        ['Extra online cover', '129 vests stay online · 70.1%. Room above the rule.', false],
+        ['Fewer sets completed', '9 fewer vests where the pants are selling. $3,141 less protected.', true],
         ['Sources are current', 'All 5 sources refreshed this morning.', false]
       ],
-      execH: 'The yes became a smaller transfer draft — the 70% floor version.',
+      execH: 'The yes became a smaller transfer draft. The 70% floor version.',
       draft: 'Transfer draft TR-0051 created',
       ref: '55 vests · online DC → 9 stores · in your order system.',
       owner: 'Store ops confirming receipt',
       execStatus: '53 of 55 shipped on today’s runs; 2 being resolved.',
       outcome: '+$16,403',
-      caption: '7-day sales under the more conservative floor — fewer sets completed in week one. The record keeps measuring.',
+      caption: '7-day sales under the more conservative floor. Fewer sets completed in week one. The record keeps measuring.',
       bars: [
         ['Arrived in the 9 stores', '53 / 55', 96],
         ['Vests sold in 7 days', '47 / 53', 89],
         ['Online stock kept', '129 · 70.1%', 70]
       ],
-      toast: 'Approved — the 70% floor call is recorded. The record will grade it too.'
+      toast: 'Approved. The 70% floor call is recorded. The record will grade it too.'
     }
   ];
 
@@ -460,7 +460,7 @@
   }
 
   /* step → lifecycle-rail mapping. Step 1 is the off-loop counterfactual
-     (the thread): no rail button is active and the rail dims — the point is
+     (the thread): no rail button is active and the rail dims - the point is
      that today's version of this fire happens outside any system. */
   var RAIL_OF_STEP = [0, -1, 1, 2, 3, 4];
 
@@ -495,7 +495,7 @@
   }
 
   /* scroll drives the stage. On small screens the panel is pinned to the top,
-     so the trigger band sits lower — where the narration is actually visible.
+     so the trigger band sits lower - where the narration is actually visible.
      Rebuilt when the layout crosses the breakpoint (resize / rotate). */
   if ('IntersectionObserver' in window) {
     var mq = window.matchMedia('(max-width: 960px)');
