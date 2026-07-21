@@ -23,7 +23,7 @@
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231A131B'/><rect x='9' y='20' width='5' height='5' fill='%23C9795B'/></svg>" />
   <link rel="preload" href="fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="styles.css?v=7" />
+  <link rel="stylesheet" href="styles.css?v=8" />
   <script>document.documentElement.classList.replace('no-js', 'js');</script>
 
   <!-- Clean-room JSON-LD: organization only. No ratings, no reviews, no invented stats. -->
@@ -47,6 +47,7 @@
         <img class="brand__logo" src="assets/outturn-ai-logo.png" width="622" height="144" alt="" aria-hidden="true" />
       </a>
       <nav class="nav__links" aria-label="Primary">
+        <a class="nav__link" href="#demo">Live demo</a>
         <a class="nav__link" href="#loop">The loop</a>
         <a class="nav__link" href="#teach">Built-in retail</a>
         <a class="nav__link" href="#honest">Honest AI</a>
@@ -58,6 +59,7 @@
       </button>
     </div>
     <div class="nav__sheet" id="navSheet">
+      <a href="#demo">Live demo</a>
       <a href="#loop">The loop</a>
       <a href="#teach">Built-in retail</a>
       <a href="#honest">Honest AI</a>
@@ -81,7 +83,7 @@
               Request a 4-week pilot
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
-            <a class="btn btn--ghost btn--lg" href="#loop">See the decision loop</a>
+            <a class="btn btn--ghost btn--lg" href="#demo">Watch one decision happen ↓</a>
           </div>
           <ul class="hero__chips" aria-label="The guarantees">
             <li>every number computed in code — and cited</li>
@@ -89,51 +91,178 @@
             <li>impact measured, never assumed</li>
           </ul>
         </div>
+      </div>
+    </section>
 
-        <!-- THE AHA: one decision record, live through the loop (JS-failsafe) -->
-        <div class="hero__card-wrap">
-          <article class="trace-card" aria-label="Example: a live decision record">
-            <div class="trace-card__kicker"><span class="dot-live" aria-hidden="true"></span> ACTIVE DECISION · RD-0042 · LIVE</div>
-            <div class="ledger-head">
-              <span class="ledger-head__metric">Stockout risk — Harper poplin shirt · Dallas NorthPark</span>
-              <span class="ledger-head__big">$<span class="countup" data-to="45288">45,288</span></span>
-              <span class="ledger-head__ctx">sales at risk — decision routed, awaiting the owner's yes</span>
+    <!-- ===================== LIVE SCROLL DEMO ===================== -->
+    <!-- One decision record, five stages. The narration column scrolls; the
+         dark panel stays pinned and swaps stage — and every stage is a real,
+         clickable surface, not a screenshot. Progressive enhancement: without
+         JS all narration renders and the panel shows stage one. -->
+    <section class="section demo-scrolly" id="demo" aria-labelledby="demo-h">
+      <div class="container container--narrow">
+        <header class="section-head reveal">
+          <p class="eyebrow">See it live — interactive demo</p>
+          <h2 class="h-section" id="demo-h">One decision, start to finish. Just scroll.</h2>
+          <p class="lead">A demo-seeded stockout moves through the five stages every issue gets. The panel on the right is clickable at every stage — and every number in it is computed in code and cited.</p>
+        </header>
+      </div>
+      <div class="container">
+        <div class="scrolly">
+          <!-- narration column -->
+          <div class="scrolly__steps">
+            <div class="scrolly-step is-active" id="demo-step-0" data-step="0">
+              <span class="scrolly-step__n">1 · Detected</span>
+              <h3 class="scrolly-step__title">The fire is already on your dashboard.</h3>
+              <p class="scrolly-step__body">Power BI flags it at 09:18: Dallas NorthPark sold its last Harper poplin shirt — a style selling 18 a week. Most teams stop here: the report gets seen, screenshotted into a chat thread, and the follow-up dies. Outturn opens a Decision Record instead — <b>RD-0042</b> — and preserves the moment the issue became visible.</p>
             </div>
-            <ul class="stage-rail" aria-label="Decision lifecycle">
-              <li class="stage stage--done">Detected</li>
-              <li class="stage stage--done">Context reconciled</li>
-              <li class="stage stage--done">Scenario prepared</li>
-              <li class="stage stage--now">Routed</li>
-              <li class="stage">Impact measured</li>
-            </ul>
-            <div class="ledger">
-              <div class="driver">
-                <span class="driver__label"><b class="lane lane--go">SIGNAL</b> Dallas sold its last unit — was selling 18 a week</span>
-                <span class="driver__val pos">0 on hand</span>
-                <span class="driver__cite">↳
-                  <button type="button" class="cite-chip" aria-expanded="false" aria-controls="src-hero-1">sales · inventory, reconciled<span class="chip-hint">show the rows</span></button>
-                  <span class="source-row" id="src-hero-1" hidden>
-                    <span class="source-row__inner"><b>sales</b> · Dallas NorthPark · last 28 days · 18/wk · <b>inventory</b> · 0 units on hand since Thursday</span>
-                  </span>
-                </span>
-              </div>
-              <div class="driver">
-                <span class="driver__label"><b class="lane lane--mark">SIGNAL</b> Houston sits on 240 units it sells 6 a week</span>
-                <span class="driver__val">40 wks of stock</span>
-                <span class="driver__cite">↳ same region, one courier run away</span>
-              </div>
-              <div class="driver">
-                <span class="driver__label"><b class="lane lane--hold">SCENARIO</b> Move 54 units Dallas sells that Houston won't</span>
-                <span class="driver__val">$45,288</span>
-                <span class="driver__cite">↳ 18/wk × 17 weeks left × $148 — the transfer executes in <em>your</em> allocation tool</span>
-              </div>
-              <div class="driver driver--muted">
-                <span class="driver__label"><b class="lane lane--human">ROUTED</b> Allocation owns it · buyer notified — context attached</span>
-                <span class="driver__val">1 yes away</span>
+            <div class="scrolly-step" id="demo-step-1" data-step="1">
+              <span class="scrolly-step__n">2 · Context reconciled</span>
+              <h3 class="scrolly-step__title">The context that lives in six places lands on one card.</h3>
+              <p class="scrolly-step__body">Sales velocity, store stock, the donor store, open orders, the courier line — every signal cited to its source rows. 18 a week × 17 weeks left × $148 = <b>$45,288 at risk</b>. Arithmetic you can recompute, never a black-box forecast.</p>
+              <p class="scrolly-step__hint">Try it — tap the source chips, open the calculation.</p>
+            </div>
+            <div class="scrolly-step" id="demo-step-2" data-step="2">
+              <span class="scrolly-step__n">3 · Decision</span>
+              <h3 class="scrolly-step__title">Outturn prepares the play. A human makes the call.</h3>
+              <p class="scrolly-step__body">Houston sits on 240 units it sells 6 a week. The prepared option: move 54 units Dallas will sell that Houston won't — with the checks that make it safe. Compare it with the slower reorder, then approve. Nothing executes without a named yes.</p>
+              <p class="scrolly-step__hint">Try it — switch options, then approve the decision.</p>
+            </div>
+            <div class="scrolly-step" id="demo-step-3" data-step="3">
+              <span class="scrolly-step__n">4 · Execution</span>
+              <h3 class="scrolly-step__title">The yes becomes an action in your systems.</h3>
+              <p class="scrolly-step__body">The approval becomes a transfer draft in <em>your</em> allocation tool — routed to allocation, buyer notified, tracked to completion. Outturn never improvises writes inside your systems: no action without a human approval, every step on the record.</p>
+            </div>
+            <div class="scrolly-step" id="demo-step-4" data-step="4">
+              <span class="scrolly-step__n">5 · Outcome measured</span>
+              <h3 class="scrolly-step__title">Did it pay? The record answers.</h3>
+              <p class="scrolly-step__body">Seven days later the same record reads the same systems and writes the outcome back. RD-0042 becomes evidence for the next stockout like it — the graded history of every call is the asset your team keeps.</p>
+              <p class="scrolly-step__hint">Try it — check what the slower option would have measured.</p>
+            </div>
+          </div>
+
+          <!-- pinned interactive panel -->
+          <div class="scrolly__stick">
+            <div class="scrolly__stick-inner">
+              <div class="demo-panel" aria-label="Interactive demo: decision record RD-0042">
+                <div class="demo-panel__top">
+                  <span class="demo-panel__kicker"><span class="dot-live" aria-hidden="true"></span> ACTIVE DECISION · RD-0042</span>
+                  <span class="demo-panel__sample">Sample data</span>
+                </div>
+                <div class="demo-rail" role="group" aria-label="Decision lifecycle stages">
+                  <button type="button" class="is-active" data-go="0">Detected</button>
+                  <button type="button" data-go="1">Context</button>
+                  <button type="button" data-go="2">Decision</button>
+                  <button type="button" data-go="3">Execution</button>
+                  <button type="button" data-go="4">Outcome</button>
+                </div>
+                <div class="demo-panel__stages">
+
+                  <!-- Stage 1 · Detected -->
+                  <div class="dstage is-active" data-stage="0">
+                    <p class="dstage__kicker">09:18 · Power BI alert</p>
+                    <h4 class="dstage__h">Dallas sold its last Harper poplin shirt.</h4>
+                    <p class="dstage__sub">Selling 18 a week · 0 on hand since Thursday · 17 selling weeks left in the season.</p>
+                    <div class="dhandoff">
+                      <div class="dhandoff__item">
+                        <small>Your existing system</small>
+                        <b>“Stockout — Harper poplin · Dallas NorthPark.”</b>
+                        <span>Power BI made the issue visible.</span>
+                      </div>
+                      <span class="dhandoff__arrow" aria-hidden="true">→</span>
+                      <div class="dhandoff__item">
+                        <small>Outturn · RD-0042</small>
+                        <b>One Decision Record opened.</b>
+                        <span>The work that begins after visibility starts here.</span>
+                      </div>
+                    </div>
+                    <div class="dstage__actions"><button type="button" class="dbtn dbtn--primary" data-go="1">See the context land →</button></div>
+                  </div>
+
+                  <!-- Stage 2 · Context reconciled -->
+                  <div class="dstage" data-stage="1">
+                    <p class="dstage__kicker">RD-0042 · context reconciled</p>
+                    <div class="drisk"><span>Sales at risk</span><b id="dRisk">$45,288</b></div>
+                    <div class="dfacts">
+                      <div class="dfact"><span>Dallas velocity</span><b>18 / wk</b></div>
+                      <div class="dfact"><span>Dallas on hand</span><b>0</b></div>
+                      <div class="dfact"><span>Houston holds</span><b>240</b></div>
+                      <div class="dfact"><span>Houston sells</span><b>6 / wk</b></div>
+                    </div>
+                    <div class="dsources" role="group" aria-label="Cited sources">
+                      <button type="button" class="dsource is-selected" data-src="0">POS sales</button>
+                      <button type="button" class="dsource" data-src="1">Store inventory</button>
+                      <button type="button" class="dsource" data-src="2">Open POs</button>
+                      <button type="button" class="dsource" data-src="3">Vendor email</button>
+                      <button type="button" class="dsource" data-src="4">Your rule</button>
+                    </div>
+                    <p class="dsource-detail" id="dSourceDetail">POS · 09:12 · Dallas NorthPark sold 18 a week over the last 28 days.</p>
+                    <div class="dstage__actions">
+                      <button type="button" class="dbtn" id="dCalcToggle" aria-expanded="false">Show the calculation</button>
+                      <button type="button" class="dbtn dbtn--primary" data-go="2">See the decision →</button>
+                    </div>
+                    <p class="dmath" id="dMath" hidden>18 / wk × 17 weeks left × $148 = <b>$45,288 sales at risk</b><br />Computed in code from the rows above and your margin assumptions — not a demand forecast.</p>
+                  </div>
+
+                  <!-- Stage 3 · Decision -->
+                  <div class="dstage" data-stage="2">
+                    <p class="dstage__kicker">RD-0042 · human decision required</p>
+                    <h4 class="dstage__h">The play is prepared. The call is yours.</h4>
+                    <div class="dpills">
+                      <span>Options:</span>
+                      <button type="button" class="dpill is-selected" data-option="0">Transfer 54 units · recommended</button>
+                      <button type="button" class="dpill" data-option="1">Reorder · 2-week lead</button>
+                    </div>
+                    <div class="ddecision">
+                      <small>Prepared decision</small>
+                      <b class="ddecision__rec" id="dRec">Move 54 units from Houston — Dallas sells them, Houston won’t.</b>
+                      <div class="ddecision__money">
+                        <div><small>Value protected</small><b id="dProtected">$45,288</b></div>
+                        <div><small>Decision deadline</small><b id="dDeadline">Today, 16:00</b></div>
+                      </div>
+                      <button type="button" class="dbtn dbtn--copper" id="dApprove">Approve and route the action</button>
+                    </div>
+                    <div class="dchecks" id="dChecks"></div>
+                  </div>
+
+                  <!-- Stage 4 · Execution -->
+                  <div class="dstage" data-stage="3">
+                    <p class="dstage__kicker">RD-0042 · routed to execution</p>
+                    <h4 class="dstage__h" id="dExecH">The yes became a transfer draft in your allocation tool.</h4>
+                    <span class="dstatus">Execution in progress</span>
+                    <div class="dtimeline">
+                      <div class="devent devent--done"><small>09:26</small><b>Approved by allocation</b><span>Decision and rationale recorded · buyer notified over the $10K line.</span></div>
+                      <div class="devent devent--done"><small>09:27</small><b id="dDraft">Transfer draft TR-0042 created</b><span id="dRef">54 units · Houston → Dallas · in your allocation tool.</span></div>
+                      <div class="devent devent--now"><small>Today</small><b id="dOwner">Store ops confirming receipt</b><span id="dExecStatus">Courier booked on today’s run.</span></div>
+                      <div class="devent"><small>+7 days</small><b>Outcome will be measured</b><span>Sales and stock read again from the same systems.</span></div>
+                    </div>
+                    <p class="dguard"><b>No write without a human approval.</b> Outturn routed the approved action into your system and tracks it — it didn’t replace the system.</p>
+                    <div class="dstage__actions"><button type="button" class="dbtn dbtn--primary" data-go="4">See the outcome, 7 days later →</button></div>
+                  </div>
+
+                  <!-- Stage 5 · Outcome measured -->
+                  <div class="dstage" data-stage="4">
+                    <p class="dstage__kicker">RD-0042 · 7 days later</p>
+                    <b class="doutcome" id="dOutcome">+$2,812</b>
+                    <p class="dcaption" id="dCaption">first-week sales from the transferred units — observed, not a causal claim · on pace to protect $45,288 over the season.</p>
+                    <div class="dbars" id="dBars"></div>
+                    <div class="dmemory">
+                      <small>Decision memory</small>
+                      <b>RD-0042 is now evidence for the next stockout like it.</b>
+                      <span>Same store pair, graded outcome, kept forever — your team’s asset.</span>
+                    </div>
+                    <div class="dstage__actions">
+                      <button type="button" class="dbtn" data-go="0">Start again</button>
+                      <a class="dbtn dbtn--copper" href="#pilot">Run this on your data →</a>
+                    </div>
+                  </div>
+
+                </div>
+                <p class="demo-panel__foot">Demo-seeded figures, not customer data. Every number opens to its rows.</p>
+                <div class="demo-toast" id="dToast" role="status" aria-live="polite"></div>
               </div>
             </div>
-            <p class="trace-card__foot">Demo-seeded figures, not customer data.</p>
-          </article>
+          </div>
         </div>
       </div>
     </section>
@@ -670,6 +799,7 @@
         <p class="footer__tagline">The active decision layer for retail operations — above planning, allocation, and BI: preparing context, routing ownership, measuring commercial impact.</p>
       </div>
       <nav class="footer__links" aria-label="Footer">
+        <a href="#demo">Live demo</a>
         <a href="#loop">The loop</a>
         <a href="#teach">Built-in retail</a>
         <a href="#honest">Honest AI</a>
@@ -683,6 +813,6 @@
     </div>
   </footer>
 
-  <script src="main.js?v=5"></script>
+  <script src="main.js?v=6"></script>
 </body>
 </html>
