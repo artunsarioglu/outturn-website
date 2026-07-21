@@ -425,7 +425,7 @@
         '<div class="dfill" data-w="' + b[2] + '"></div></div><b>' + b[1] + '</b></div>';
     }).join('');
     barsPlayed = false;
-    if (current === 4) playBars();
+    if (current === 5) playBars();
     Array.prototype.forEach.call(root.querySelectorAll('.dpill'), function (p) {
       p.classList.toggle('is-selected', Number(p.getAttribute('data-option')) === option);
     });
@@ -459,17 +459,24 @@
     requestAnimationFrame(tick);
   }
 
+  /* step → lifecycle-rail mapping. Step 1 is the off-loop counterfactual
+     (the thread): no rail button is active and the rail dims — the point is
+     that today's version of this fire happens outside any system. */
+  var RAIL_OF_STEP = [0, -1, 1, 2, 3, 4];
+
   function setStage(n) {
     if (n === current && stages[n].classList.contains('is-active')) return;
     current = n;
+    var r = RAIL_OF_STEP[n];
+    root.querySelector('.demo-panel').classList.toggle('is-today', r === -1);
     stages.forEach(function (s, i) { s.classList.toggle('is-active', i === n); });
     railBtns.forEach(function (b, i) {
-      b.classList.toggle('is-active', i === n);
-      b.classList.toggle('is-done', i < n);
+      b.classList.toggle('is-active', i === r);
+      b.classList.toggle('is-done', r === -1 ? i === 0 : i < r);
     });
     steps.forEach(function (s, i) { s.classList.toggle('is-active', i === n); });
-    if (n === 1) countRisk();
-    if (n === 4) playBars();
+    if (n === 2) countRisk();
+    if (n === 5) playBars();
   }
 
   function goStep(n) {
@@ -545,7 +552,7 @@
   /* approve → route → advance to execution */
   $('dApprove').addEventListener('click', function () {
     toast(OPTIONS[option].toast);
-    window.setTimeout(function () { goStep(3); }, 500);
+    window.setTimeout(function () { goStep(4); }, 500);
   });
 
   renderOption();
