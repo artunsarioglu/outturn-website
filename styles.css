@@ -415,6 +415,9 @@ button{font:inherit}
 /* narration steps */
 .scrolly__steps{display:flex;flex-direction:column}
 .scrolly-step{min-height:74vh;display:flex;flex-direction:column;justify-content:center}
+/* the first step meets the panel at the top of the spread — the two columns
+   start together, then later steps pair with the pinned panel at center */
+.scrolly-step:first-child{min-height:62vh;justify-content:flex-start;padding-top:1.1rem}
 .js .scrolly-step{opacity:.32;transition:opacity .4s ease}
 .js .scrolly-step.is-active{opacity:1}
 .scrolly-step__n{font-family:var(--mono);font-size:.68rem;font-weight:600;letter-spacing:.1em;
@@ -545,9 +548,11 @@ button{font:inherit}
 .doutcome{font-size:clamp(2.2rem,4.5vw,3.2rem);font-weight:700;letter-spacing:-.04em;line-height:1;
   color:#9FD3B8;margin:.2rem 0 .5rem}
 .dcaption{font-size:.74rem;color:var(--on-dark-muted);line-height:1.6;margin:0 0 1.1rem;max-width:46ch}
-.dbars{margin-bottom:1rem}
-.dbar{display:grid;grid-template-columns:minmax(120px,.9fr) minmax(0,1fr) auto;gap:.7rem;align-items:center;
-  padding:.45rem 0}
+/* one shared grid: every row's label, track, and value sit on the same
+   columns, so the tracks start and end on a common line */
+.dbars{display:grid;grid-template-columns:auto minmax(0,1fr) auto;column-gap:.8rem;row-gap:.9rem;
+  align-items:center;margin-bottom:1rem}
+.dbar{display:contents}
 .dbar span{font-size:.7rem;color:var(--on-dark-muted)}
 .dbar .dtrack{height:6px;border-radius:999px;background:rgba(251,247,243,.12);overflow:hidden}
 .dbar .dfill{height:100%;border-radius:inherit;background:#5E8F77;width:0;transition:width .9s cubic-bezier(.2,.7,.3,1)}
@@ -576,7 +581,7 @@ button{font:inherit}
   .demo-panel{height:min(56vh,520px);border-radius:20px;padding:1rem 1rem .7rem}
   .demo-panel__foot{display:none}
   .scrolly-step{min-height:44vh;justify-content:flex-start;padding-top:1.6rem}
-  .scrolly-step:first-child{padding-top:2.4rem}
+  .scrolly-step:first-child{min-height:44vh;padding-top:2.4rem}
   .dfacts{grid-template-columns:repeat(2,1fr)}
   .dhandoff{grid-template-columns:1fr;gap:.6rem}
   .dhandoff__arrow{display:none}

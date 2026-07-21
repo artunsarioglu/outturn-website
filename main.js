@@ -342,63 +342,65 @@
 
   function $(id) { return document.getElementById(id); }
 
-  /* ---- the two prepared options: the recommended transfer vs. the slower
-     reorder. Switching updates decision, execution, and measured outcome —
-     the record tracks whether the *decision* worked, not just the task. ---- */
+  /* ---- the broken-set case: trousers selling, matching vest gone in 9
+     stores. The two options are the online-floor call — 65% (the company
+     rule) vs a more conservative 70%. Switching updates decision, execution,
+     and measured outcome — the record tracks whether the *decision* worked,
+     not just the task. ---- */
   var SOURCES = [
-    'POS · 09:12 · Dallas NorthPark sold 18 a week over the last 28 days.',
-    'Inventory · 09:14 · Dallas on hand: 0 since Thursday · Houston Galleria: 240.',
-    'SAP · 09:15 · No open PO for the style — a reorder lands in 2 weeks at best.',
-    'Email · 08:46 · Courier runs Houston → Dallas daily · $150 a run.',
-    'never_ship_a_stockout@v3 · your rule: flag any style selling over 10 a week that hits zero.'
+    'POS · 09:12 · 312 trousers selling in the 9 stores — 1 in 4 buyers adds the vest.',
+    'Inventory · 09:14 · Vest on hand across the 9 stores: 0.',
+    'E-commerce · 09:15 · 184 vests sellable online.',
+    'Email · 08:46 · E-commerce lead: at least 65% of vest stock must stay sellable online.',
+    'keep_online_above_65@v4 · your rule: sellable online stock never falls below 65%.'
   ];
 
   var OPTIONS = [
     {
-      rec: 'Move 54 units from Houston — Dallas sells them, Houston won’t.',
-      protectedVal: '$45,288',
+      rec: 'Send 64 vests to the 9 stores — the trousers sell them as sets; online keeps its floor.',
+      protectedVal: '$22,336',
       deadline: 'Today, 16:00',
       checks: [
-        ['Donor store is safe', 'Houston keeps 186 units · 31 weeks of cover at 6 a week.', false],
-        ['Cost within policy', 'One $150 courier run · 0.3% of the value protected.', false],
+        ['Online floor is protected', '120 vests stay online · 65.2% — above your 65% rule.', false],
+        ['Cost within policy', '$980 across 9 store shipments · 4.4% of the value protected.', false],
         ['Sources are current', 'All 5 sources refreshed this morning.', false]
       ],
-      execH: 'The yes became a transfer draft in your allocation tool.',
-      draft: 'Transfer draft TR-0042 created',
-      ref: '54 units · Houston → Dallas · in your allocation tool.',
+      execH: 'The yes became a store-transfer draft in your order system.',
+      draft: 'Transfer draft TR-0051 created',
+      ref: '64 vests · online DC → 9 stores · in your order system.',
       owner: 'Store ops confirming receipt',
-      execStatus: 'Courier booked on today’s run.',
-      outcome: '+$2,812',
-      caption: 'first-week sales from the transferred units — observed, not a causal claim · on pace to protect $45,288 over the season.',
+      execStatus: '61 of 64 shipped on today’s runs; 3 being resolved.',
+      outcome: '+$18,846',
+      caption: '7-day sales from the transferred vests — observed, not a causal claim · and the trousers they complete keep selling.',
       bars: [
-        ['Arrived in Dallas', '54 / 54', 100],
-        ['Sold in week one', '19 · 18/wk pace held', 95],
-        ['Houston cover after', '31 weeks · healthy', 70]
+        ['Arrived in the 9 stores', '61 / 64', 95],
+        ['Vests sold in 7 days', '54 / 61', 88],
+        ['Online stock kept', '120 · 65.2%', 65]
       ],
-      toast: 'Approved — routed to allocation with the context attached.'
+      toast: 'Approved — 64 vests routed to store ops with the context attached.'
     },
     {
-      rec: 'Reorder from the vendor — lands in 2 weeks at best.',
-      protectedVal: '$39,960',
-      deadline: 'Vendor cutoff · Friday',
+      rec: 'Send 55 vests — online keeps 70%, stores complete fewer sets.',
+      protectedVal: '$19,195',
+      deadline: 'Today, 16:00',
       checks: [
-        ['Two stockout weeks first', '$5,328 of the risk is already unrecoverable before it lands.', true],
-        ['Houston overstock stays', '240 units keep selling 6 a week — 40 weeks of cover.', true],
+        ['Extra online cover', '129 vests stay online · 70.1% — room above the rule.', false],
+        ['Fewer sets completed', '9 fewer vests where the trousers are selling — $3,141 less protected.', true],
         ['Sources are current', 'All 5 sources refreshed this morning.', false]
       ],
-      execH: 'The yes became a purchase order draft for your buyer.',
-      draft: 'Purchase order draft PO-0042 created',
-      ref: '54 units · vendor · lands in 2 weeks.',
-      owner: 'Buyer confirming with the vendor',
-      execStatus: 'Ship date requested · day 14.',
-      outcome: '$0 so far',
-      caption: 'nothing arrives before day 14 — week one already cost $2,664 in missed sales. The record keeps measuring.',
+      execH: 'The yes became a smaller transfer draft — the 70% floor version.',
+      draft: 'Transfer draft TR-0051 created',
+      ref: '55 vests · online DC → 9 stores · in your order system.',
+      owner: 'Store ops confirming receipt',
+      execStatus: '53 of 55 shipped on today’s runs; 2 being resolved.',
+      outcome: '+$16,403',
+      caption: '7-day sales under the more conservative floor — fewer sets completed in week one. The record keeps measuring.',
       bars: [
-        ['Arrived in Dallas', '0 / 54', 4],
-        ['Missed sales, week one', '$2,664', 50],
-        ['Vendor ship date', 'day 14 · confirmed', 100]
+        ['Arrived in the 9 stores', '53 / 55', 96],
+        ['Vests sold in 7 days', '47 / 53', 89],
+        ['Online stock kept', '129 · 70.1%', 70]
       ],
-      toast: 'Approved — PO routed to the buyer. The record will grade this call too.'
+      toast: 'Approved — the 70% floor call is recorded. The record will grade it too.'
     }
   ];
 
@@ -444,15 +446,15 @@
     if (riskCounted) return;
     riskCounted = true;
     var el = $('dRisk');
-    if (reduceMotion) { el.textContent = '$45,288'; return; }
+    if (reduceMotion) { el.textContent = '$27,222'; return; }
     var dur = 650, start = null;
     function tick(ts) {
       if (start === null) start = ts;
       var p = Math.min((ts - start) / dur, 1);
       var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = '$' + Math.round(45288 * eased).toLocaleString('en-US');
+      el.textContent = '$' + Math.round(27222 * eased).toLocaleString('en-US');
       if (p < 1) requestAnimationFrame(tick);
-      else el.textContent = '$45,288';
+      else el.textContent = '$27,222';
     }
     requestAnimationFrame(tick);
   }
