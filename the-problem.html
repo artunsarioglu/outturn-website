@@ -7,7 +7,7 @@
   <meta name="description" content="Outturn is an AI Decision System for Retail that brings company memory, commercial context and human expertise to every decision." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231A131B'/><rect x='9' y='20' width='5' height='5' fill='%23C9795B'/></svg>" />
   <link rel="preload" href="fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="styles.css?v=61" />
+  <link rel="stylesheet" href="styles.css?v=64" />
   <script>document.documentElement.classList.replace('no-js', 'js');</script>
 </head>
 <body class="problem-page">
@@ -84,12 +84,13 @@
           <p class="problem-story__closing">When a similar situation returns, teams search again. The same thinking is repeated. Experience does not compound.</p>
         </div>
         <div class="record-comparison" aria-label="Comparison of operational records and organizational decision memory">
-          <div>
+          <div class="record-comparison__actions">
             <span>What operational systems record</span>
             <ul><li>Action</li><li>Quantity</li><li>Date</li><li>Status</li></ul>
           </div>
-          <div>
+          <div class="record-comparison__memory">
             <span>What organizations need to remember</span>
+            <small>Missing from the record</small>
             <ul><li>Decision</li><li>Context</li><li>Alternatives</li><li>Trade-offs</li><li>Reasoning</li><li>Expected outcome</li><li>Relevant expertise</li></ul>
           </div>
         </div>
@@ -157,20 +158,20 @@
         sheet.classList.toggle('is-open', !open);
       });
 
-      var scene = document.querySelector('.context-scene');
-      if (!scene) return;
+      var animatedVisuals = document.querySelectorAll('.context-scene, .record-comparison');
+      if (!animatedVisuals.length) return;
       if (!('IntersectionObserver' in window)) {
-        scene.classList.add('is-in-view');
+        animatedVisuals.forEach(function (visual) { visual.classList.add('is-in-view'); });
         return;
       }
       var observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (!entry.isIntersecting) return;
-          scene.classList.add('is-in-view');
-          observer.disconnect();
+          entry.target.classList.add('is-in-view');
+          observer.unobserve(entry.target);
         });
       }, { threshold: 0.3 });
-      observer.observe(scene);
+      animatedVisuals.forEach(function (visual) { observer.observe(visual); });
     }());
   </script>
 </body>

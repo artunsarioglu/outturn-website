@@ -106,6 +106,8 @@ The story leads to the core insight that retail has systems of record for transa
 
 The fragmented-context visual animates once it enters the viewport. Source cards appear in sequence, move subtly, and pulse their connections toward the commercial decision. Hover highlights an individual source; reduced-motion preferences disable the animation.
 
+The operational-record comparison also animates once on entry. Recorded execution fields resolve first, followed by the decision information that is missing from the record. A subtle scan line and hover states keep the comparison dynamic without changing the page’s calm visual language.
+
 ## ROI on How It Works
 
 The existing `how-it-works.html` page places a “Where we sit” comparison directly below the product architecture, positioning Outturn as the decision layer between commercial intelligence and execution. A concise ROI section follows with an illustrative four-week pilot summary, three value layers, four transparent formulas, a compact weekly table and a short decision-memory compounding strip.
