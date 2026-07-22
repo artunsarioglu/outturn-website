@@ -100,7 +100,7 @@ The decision stage compares two commercial outcomes, “Protect store availabili
 
 The existing `the-problem.html` route positions Outturn as an AI Decision System for Retail through two simple problems. Before a decision, teams search across systems and people to reconstruct context. After a decision, operational systems record execution but lose the judgment, alternatives, trade-offs and expected outcome.
 
-The hero leads with: “Every commercial decision begins with a search. Too few become knowledge.” It explains that relevant information exists across systems, reports, conversations and people, but is rarely assembled at the moment of decision.
+The hero leads with: “Every commercial decision begins with a search. Too few become knowledge.” It explains that teams search systems, reports, conversations and people before a decision, while operational systems preserve the action but lose its context, trade-offs, expertise and expected outcome.
 
 The story leads to the core insight that retail has systems of record for transactions but lacks a system of record for commercial decisions. Outturn is presented as the decision layer between commercial context and operational execution, connecting decisions to outcomes and reusable learning.
 
