@@ -342,7 +342,7 @@
 
   function $(id) { return document.getElementById(id); }
 
-  /* ---- the broken-set case: trousers selling, matching vest gone in 9
+  /* ---- the broken-set case: pants selling, matching vest gone in 9
      stores. The two options are the online-floor call - 65% (the company
      rule) vs a more conservative 70%. Switching updates decision, execution,
      and measured outcome - the record tracks whether the *decision* worked,

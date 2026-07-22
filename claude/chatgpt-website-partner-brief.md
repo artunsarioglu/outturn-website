@@ -92,6 +92,8 @@ The page emphasizes deterministic calculations, source-linked evidence, human ap
 
 ## Demo narrative
 
+Demo copy uses American English, including “pants” rather than “trousers.”
+
 The interactive demo follows a decision through these five stages:
 
 1. Your day, prepared
