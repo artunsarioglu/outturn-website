@@ -98,11 +98,11 @@ The decision stage compares two commercial outcomes, “Protect store availabili
 
 ## Problem page
 
-The existing `the-problem.html` route now positions Outturn as an AI Decision System for Retail. The page explains six connected problems: fragmented decision context, company knowledge that is hard to reuse, the combined impact of distributed commercial choices, judgment lost in operational systems, outcomes disconnected from decisions, and more AI recommendations without organizational learning.
+The existing `the-problem.html` route positions Outturn as an AI Decision System for Retail through two simple problems. Before a decision, teams search across systems and people to reconstruct context. After a decision, operational systems record execution but lose the judgment, alternatives, trade-offs and expected outcome.
 
 The hero leads with: “Retail teams keep reconstructing decisions the business has already faced.” It explains that relevant information exists across systems, reports, conversations and people, but is rarely assembled at the moment of decision.
 
-The page uses the existing visual system and introduces concise explanatory patterns: scattered business sources around an incomplete commercial decision, a decision-memory card, converging commercial decision cards, an operational-record comparison, and a situation-to-learning path. It avoids alerting language and does not position Outturn as a forecasting, pricing, replenishment or allocation engine.
+The story leads to the core insight that retail has systems of record for transactions but lacks a system of record for commercial decisions. Outturn is presented as the decision layer between commercial context and operational execution, connecting decisions to outcomes and reusable learning.
 
 The fragmented-context visual animates once it enters the viewport. Source cards appear in sequence, move subtly, and pulse their connections toward the commercial decision. Hover highlights an individual source; reduced-motion preferences disable the animation.
 
