@@ -61,7 +61,7 @@ Each decision brief brings together:
 - Seven-question FAQ
 - Updated footer navigation
 
-The homepage no longer includes the Problem, How It Works, Honest AI, or ROI sections inline. Those narratives were moved to dedicated pages.
+The homepage no longer includes the Problem, How It Works, or Honest AI sections inline. Those narratives were moved to dedicated pages.
 
 ### The Problem: `the-problem.html`
 
@@ -112,9 +112,7 @@ Between the operational-record problem and the missing decision layer, a concise
 
 The Problem page is intentionally concise: hero, before the decision, after the decision, commercial consequences, and the missing decision layer. The previous standalone lifecycle and closing sections were removed; the final CTA now sits inside the missing-layer section.
 
-## ROI on How It Works
-
-The existing `how-it-works.html` page places a “Where we sit” comparison directly below the product architecture, positioning Outturn as the decision layer between commercial intelligence and execution. A concise ROI section follows with an illustrative four-week pilot summary, three value layers, four transparent formulas, a compact weekly table and a short decision-memory compounding strip.
+The existing `how-it-works.html` page places a “Where we sit” comparison directly below the product architecture, positioning Outturn as the decision layer between commercial intelligence and execution. The illustrative ROI section has been removed from the site.
 
 The interactive demo follows a decision through these five stages:
 
