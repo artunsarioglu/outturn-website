@@ -106,6 +106,10 @@ The story leads to the core insight that retail has systems of record for transa
 
 The fragmented-context visual animates once it enters the viewport. Source cards appear in sequence, move subtly, and pulse their connections toward the commercial decision. Hover highlights an individual source; reduced-motion preferences disable the animation.
 
+## ROI on How It Works
+
+The existing `how-it-works.html` page includes a complete ROI section below the product architecture. It uses an explicitly illustrative four-week pilot model across commercial value, decision quality and organizational learning, plus operational speed and coordination. All sample values are labeled as illustrative and the calculation formulas are shown so each metric can be recomputed from retailer source data.
+
 The interactive demo follows a decision through these five stages:
 
 1. Your day, prepared
