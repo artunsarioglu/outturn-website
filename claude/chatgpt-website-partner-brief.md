@@ -29,7 +29,7 @@ The long-term vision is to become the decision brain for retail by connecting co
 
 **Description**
 
-`Outturn is a scalable, data science-first decision system for retail. It gives merchandisers the context to make better commercial decisions, remembers what happened, and improves the next one. Fully agentic by design, it turns fragmented data and manual follow-up into faster action.`
+`Outturn gives retail teams the context to make better commercial decisions, remembers why decisions were made and what happened next, so every future decision starts smarter than the last.`
 
 **Guarantees**
 
@@ -175,4 +175,3 @@ After every website PR:
 3. Add or remove follow-ups as their status changes.
 4. Update the PR link, branch, merge status, and relevant commit summary.
 5. Commit this file to the same PR before considering the PR complete.
-
