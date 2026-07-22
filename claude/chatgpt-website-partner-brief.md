@@ -171,6 +171,8 @@ Current FAQ topics:
 - `a034e53` Add the website partner handoff brief
 - `7e69f86` Refocus the hero on decision memory
 - `893b5ab` Combine the decision summary with its context
+- `7c618b2` Refine the prepared-day demo message
+- `cdc0543` Expand the reconciled context screen
 
 ## Required PR closeout
 
