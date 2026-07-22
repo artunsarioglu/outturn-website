@@ -104,6 +104,8 @@ The hero leads with: “Retail teams keep reconstructing decisions the business 
 
 The page uses the existing visual system and introduces concise explanatory patterns: scattered business sources around an incomplete commercial decision, a decision-memory card, converging commercial decision cards, an operational-record comparison, and a situation-to-learning path. It avoids alerting language and does not position Outturn as a forecasting, pricing, replenishment or allocation engine.
 
+The fragmented-context visual animates once it enters the viewport. Source cards appear in sequence, move subtly, and pulse their connections toward the commercial decision. Hover highlights an individual source; reduced-motion preferences disable the animation.
+
 The interactive demo follows a decision through these five stages:
 
 1. Your day, prepared
