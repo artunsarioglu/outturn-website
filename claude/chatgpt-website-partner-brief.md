@@ -108,7 +108,7 @@ The fragmented-context visual animates once it enters the viewport. Source cards
 
 The operational-record comparison also animates once on entry. Recorded execution fields resolve first, followed by the decision information that is missing from the record. A subtle scan line and hover states keep the comparison dynamic without changing the page’s calm visual language.
 
-Between the operational-record problem and the missing decision layer, a concise consequences section shows what gets squeezed out: category strategy, assortment reviews, long-tail opportunities and learning from outcomes. It also shows decisions made across teams without their combined commercial impact being evaluated together.
+Between the operational-record problem and the missing decision layer, a concise attention visual shows a working day consumed by rebuilding context and immediate decisions. The smaller remaining space holds category strategy, assortment reviews, long-tail opportunities and learning. Parallel team decisions appear below with their combined effect not evaluated together.
 
 The Problem page is intentionally concise: hero, before the decision, after the decision, commercial consequences, and the missing decision layer. The previous standalone lifecycle and closing sections were removed; the final CTA now sits inside the missing-layer section.
 
