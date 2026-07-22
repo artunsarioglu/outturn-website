@@ -108,6 +108,8 @@ The fragmented-context visual animates once it enters the viewport. Source cards
 
 The operational-record comparison also animates once on entry. Recorded execution fields resolve first, followed by the decision information that is missing from the record. A subtle scan line and hover states keep the comparison dynamic without changing the page’s calm visual language.
 
+Between the operational-record problem and the missing decision layer, a concise consequences section shows what gets squeezed out: category strategy, assortment reviews, long-tail opportunities and learning from outcomes. It also shows decisions made across teams without their combined commercial impact being evaluated together.
+
 ## ROI on How It Works
 
 The existing `how-it-works.html` page places a “Where we sit” comparison directly below the product architecture, positioning Outturn as the decision layer between commercial intelligence and execution. A concise ROI section follows with an illustrative four-week pilot summary, three value layers, four transparent formulas, a compact weekly table and a short decision-memory compounding strip.
