@@ -352,7 +352,8 @@
     'Inventory · 09:14 · Vest on hand across the 9 stores: 0.',
     'E-commerce · 09:15 · 184 vests sellable online.',
     'Email · 08:46 · E-commerce lead: at least 65% of vest stock must stay sellable online.',
-    'keep_online_above_65@v4 · your rule: sellable online stock never falls below 65%.'
+    'keep_online_above_65@v4 · your rule: sellable online stock never falls below 65%.',
+    'Decision memory · 3 similar broken-set decisions reviewed. Transfers protected set sales while keeping the online floor.'
   ];
 
   var OPTIONS = [
@@ -363,7 +364,7 @@
       checks: [
         ['Online floor is protected', '120 vests stay online · 65.2%. Above your 65% rule.', false],
         ['Cost within policy', '$980 across 9 store shipments · 4.4% of the value protected.', false],
-        ['Sources are current', 'All 5 sources refreshed this morning.', false]
+        ['Sources are current', 'All 6 sources refreshed this morning.', false]
       ],
       execH: 'The yes became a store-transfer draft in your order system.',
       draft: 'Transfer draft TR-0051 created',
@@ -536,7 +537,7 @@
     var open = !m.hidden;
     m.hidden = open;
     calcBtn.setAttribute('aria-expanded', String(!open));
-    calcBtn.textContent = open ? 'Show the calculation' : 'Hide the calculation';
+    calcBtn.textContent = open ? 'Inspect the evidence' : 'Hide the evidence';
   });
 
   /* option pills */

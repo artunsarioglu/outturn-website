@@ -488,6 +488,8 @@ button{font:inherit}
 .dstage__h{font-size:clamp(1.15rem,2vw,1.45rem);font-weight:700;letter-spacing:-.02em;line-height:1.2;
   color:var(--on-dark);margin:0 0 .5rem}
 .dstage__sub{font-size:.84rem;color:var(--on-dark-muted);margin:0 0 1.1rem;line-height:1.6}
+.dcontext-exposure{margin-top:-.35rem;color:var(--on-dark-muted)}
+.dcontext-exposure b{color:var(--accent-soft);font-weight:650}
 .dqueue{display:grid;gap:.42rem;margin:.1rem 0 .3rem}.dqueue__item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.15rem .8rem;padding:.55rem .7rem;border:1px solid rgba(251,247,243,.12);border-radius:9px;background:rgba(251,247,243,.035)}.dqueue__item span{grid-column:1/-1;font:600 .5rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--on-dark-muted)}.dqueue__item b{font-size:.7rem;letter-spacing:-.015em;color:var(--on-dark)}.dqueue__item small{align-self:end;font:600 .53rem/1 var(--mono);color:var(--accent-soft);white-space:nowrap}.dqueue__item--urgent{border-color:rgba(201,121,91,.65);background:rgba(201,121,91,.1)}.dqueue__item--urgent span{color:var(--accent-soft)}
 .dstage__actions{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:auto;padding-top:1rem}
 

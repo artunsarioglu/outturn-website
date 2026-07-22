@@ -23,7 +23,7 @@
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231A131B'/><rect x='9' y='20' width='5' height='5' fill='%23C9795B'/></svg>" />
   <link rel="preload" href="fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="styles.css?v=53" />
+  <link rel="stylesheet" href="styles.css?v=55" />
   <script>document.documentElement.classList.replace('no-js', 'js');</script>
 
   <!-- Clean-room JSON-LD: organization only. No ratings, no reviews, no invented stats. -->
@@ -112,9 +112,9 @@
             </div>
             <div class="scrolly-step" id="demo-step-1" data-step="1">
               <span class="scrolly-step__n">2 · Context reconciled</span>
-              <h3 class="scrolly-step__title">Open the context behind the decision.</h3>
-              <p class="scrolly-step__body">Pants sell-through, store and online vest stock, and the e-commerce floor rule land on one record. Every signal is cited to its source rows; every number can be recomputed.</p>
-              <p class="scrolly-step__hint">Try it: tap the source chips and open the calculation.</p>
+              <h3 class="scrolly-step__title">See exactly what the decision is built on.</h3>
+              <p class="scrolly-step__body">Outturn brings together the commercial evidence, business rules and relevant history behind each decision. Every signal is linked to its source, every calculation can be inspected, and every trade-off is made explicit.</p>
+              <p class="scrolly-step__hint">Explore the evidence</p>
             </div>
             <div class="scrolly-step" id="demo-step-2" data-step="2">
               <span class="scrolly-step__n">3 · Decision</span>
@@ -184,8 +184,8 @@
                   <!-- Decision summary and reconciled context combined in one stage. -->
                   <div class="dstage" data-stage="1">
                     <p class="dstage__kicker">Decision brief · RD-0051 · context reconciled</p>
-                    <h4 class="dstage__h">Linen suit vests are out of stock in 9 stores.</h4>
-                    <div class="drisk"><span>Set sales at risk</span><b id="dRisk">$27,222</b></div>
+                    <h4 class="dstage__h">Rebalance linen suit inventory before the weekend.</h4>
+                    <p class="dstage__sub dcontext-exposure">9 stores out of stock · <b><span id="dRisk">$27,222</span> set sales at risk</b></p>
                     <div class="dfacts">
                       <div class="dfact"><span>Trousers in stores</span><b>312</b></div>
                       <div class="dfact"><span>Set purchase rate</span><b>25%</b></div>
@@ -196,13 +196,14 @@
                       <button type="button" class="dsource is-selected" data-src="0">POS sales</button>
                       <button type="button" class="dsource" data-src="1">Store inventory</button>
                       <button type="button" class="dsource" data-src="2">Online inventory</button>
-                      <button type="button" class="dsource" data-src="3">Email</button>
-                      <button type="button" class="dsource" data-src="4">Your rule</button>
+                      <button type="button" class="dsource" data-src="3">Email context</button>
+                      <button type="button" class="dsource" data-src="4">E-commerce floor rule</button>
+                      <button type="button" class="dsource" data-src="5">Similar past decisions</button>
                     </div>
                     <p class="dsource-detail" id="dSourceDetail">POS · 09:12 · 312 trousers selling in the 9 stores. 1 in 4 buyers adds the vest.</p>
                     <div class="dstage__actions">
-                      <button type="button" class="dbtn" id="dCalcToggle" aria-expanded="false">Show the calculation</button>
-                      <button type="button" class="dbtn dbtn--primary" data-go="2">See the decision →</button>
+                      <button type="button" class="dbtn" id="dCalcToggle" aria-expanded="false">Inspect the evidence</button>
+                      <button type="button" class="dbtn dbtn--primary" data-go="2">Review the decision →</button>
                     </div>
                     <p class="dmath" id="dMath" hidden>312 trousers × 25% set rate × $349 = <b>$27,222 set sales at risk</b><br />Computed in code from the rows above and your own set assumption. Not a demand forecast.</p>
                   </div>
@@ -938,6 +939,6 @@
     </div>
   </footer>
 
-  <script src="main.js?v=9"></script>
+  <script src="main.js?v=10"></script>
 </body>
 </html>

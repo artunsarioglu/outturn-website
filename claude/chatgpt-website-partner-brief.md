@@ -102,6 +102,8 @@ The interactive demo follows a decision through these five stages:
 
 The previous standalone decision-summary screen was merged into the context screen. The Linen Suit decision title, commercial exposure, supporting facts, cited sources, and calculation now appear on one screen.
 
+The second step is titled `See exactly what the decision is built on.` It explains that Outturn combines commercial evidence, business rules, and relevant history. The product panel uses the decision title `Rebalance linen suit inventory before the weekend.` and shows six evidence sources, including similar past decisions.
+
 The first step currently reads:
 
 `Before you start the day, Outturn reviews your reports, emails, sales and inventory signals. It brings forward the decisions that require your judgment, with the relevant context, commercial exposure and past outcomes already prepared.`
