@@ -104,7 +104,7 @@ The previous standalone decision-summary screen was merged into the context scre
 
 The first step currently reads:
 
-`Before you start the day, Outturn reviews your reports, emails, sales, and inventory signals across siloed data systems. It brings the decisions that need your judgment to the top and updates them as new signals appear.`
+`Before you start the day, Outturn reviews your reports, emails, sales and inventory signals. It brings forward the decisions that require your judgment, with the relevant context, commercial exposure and past outcomes already prepared.`
 
 The demo must remain sticky while the narration scrolls. Do not add `overflow` to the scrollytelling section or padding to the sticky wrapper because both previously broke the interaction.
 
