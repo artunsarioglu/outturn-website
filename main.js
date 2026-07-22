@@ -343,8 +343,8 @@
   function $(id) { return document.getElementById(id); }
 
   /* ---- the broken-set case: pants selling, matching vest gone in 9
-     stores. The two options are the online-floor call - 65% (the company
-     rule) vs a more conservative 70%. Switching updates decision, execution,
+     stores. The two options frame the commercial outcome: protect store
+     availability or protect online availability. Switching updates decision, execution,
      and measured outcome - the record tracks whether the *decision* worked,
      not just the task. ---- */
   var SOURCES = [
@@ -358,13 +358,12 @@
 
   var OPTIONS = [
     {
-      rec: 'Send 64 vests to the 9 stores. The pants sell them as sets; online keeps its floor.',
+      rec: 'Transfer 64 vests to the nine stores before the weekend.',
+      why: 'This option protects the highest amount of expected set sales while maintaining the company’s online inventory floor.',
       protectedVal: '$22,336',
       deadline: 'Today, 16:00',
       checks: [
-        ['Online floor is protected', '120 vests stay online · 65.2%. Above your 65% rule.', false],
-        ['Cost within policy', '$980 across 9 store shipments · 4.4% of the value protected.', false],
-        ['Sources are current', 'All 6 sources refreshed this morning.', false]
+        ['Company policy satisfied', '120 vests remain online. 65.2% online availability is maintained. The nine priority stores receive full coverage.', false]
       ],
       execH: 'The yes became a store-transfer draft in your order system.',
       draft: 'Transfer draft TR-0051 created',
@@ -381,13 +380,12 @@
       toast: 'Approved. 64 vests routed to store ops with the context attached.'
     },
     {
-      rec: 'Send 55 vests. Online keeps 70%, stores complete fewer sets.',
-      protectedVal: '$19,195',
+      rec: 'Transfer 55 vests and retain a larger online inventory buffer.',
+      why: 'This option preserves more online availability, while reducing the number of stores fully covered and the estimated value protected.',
+      protectedVal: '$18,420',
       deadline: 'Today, 16:00',
       checks: [
-        ['Extra online cover', '129 vests stay online · 70.1%. Room above the rule.', false],
-        ['Fewer sets completed', '9 fewer vests where the pants are selling. $3,141 less protected.', true],
-        ['Sources are current', 'All 5 sources refreshed this morning.', false]
+        ['Company policy satisfied', '129 vests remain online. 70.1% online availability is maintained. Six priority stores receive full coverage.', false]
       ],
       execH: 'The yes became a smaller transfer draft. The 70% floor version.',
       draft: 'Transfer draft TR-0051 created',
@@ -408,6 +406,7 @@
   function renderOption() {
     var o = OPTIONS[option];
     $('dRec').textContent = o.rec;
+    $('dDecisionWhy').textContent = o.why;
     $('dProtected').textContent = o.protectedVal;
     $('dDeadline').textContent = o.deadline;
     $('dChecks').innerHTML = o.checks.map(function (c) {
@@ -427,8 +426,10 @@
     }).join('');
     barsPlayed = false;
     if (current === 5) playBars();
-    Array.prototype.forEach.call(root.querySelectorAll('.dpill'), function (p) {
-      p.classList.toggle('is-selected', Number(p.getAttribute('data-option')) === option);
+    Array.prototype.forEach.call(root.querySelectorAll('.doption'), function (p) {
+      var selected = Number(p.getAttribute('data-option')) === option;
+      p.classList.toggle('is-selected', selected);
+      p.setAttribute('aria-checked', String(selected));
     });
   }
 
@@ -540,12 +541,19 @@
     calcBtn.textContent = open ? 'Inspect the evidence' : 'Hide the evidence';
   });
 
-  /* option pills */
-  Array.prototype.forEach.call(root.querySelectorAll('.dpill'), function (b) {
+  /* commercial option cards */
+  Array.prototype.forEach.call(root.querySelectorAll('.doption'), function (b) {
     b.addEventListener('click', function () {
       option = Number(b.getAttribute('data-option'));
       renderOption();
     });
+  });
+
+  $('dChooseAlternative').addEventListener('click', function () {
+    option = 1;
+    renderOption();
+    var selected = root.querySelector('.doption.is-selected');
+    if (selected) selected.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'nearest' });
   });
 
   /* approve → route → advance to execution */

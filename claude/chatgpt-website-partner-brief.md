@@ -94,6 +94,8 @@ The page emphasizes deterministic calculations, source-linked evidence, human ap
 
 Demo copy uses American English, including “pants” rather than “trousers.”
 
+The decision stage compares two commercial outcomes, “Protect store availability” and “Protect online availability,” instead of presenting technical inventory-floor toggles. The user can inspect both options, compare their trade-offs, choose one, and approve execution.
+
 The interactive demo follows a decision through these five stages:
 
 1. Your day, prepared

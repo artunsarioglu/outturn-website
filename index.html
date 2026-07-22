@@ -23,7 +23,7 @@
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231A131B'/><rect x='9' y='20' width='5' height='5' fill='%23C9795B'/></svg>" />
   <link rel="preload" href="fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="styles.css?v=55" />
+  <link rel="stylesheet" href="styles.css?v=56" />
   <script>document.documentElement.classList.replace('no-js', 'js');</script>
 
   <!-- Clean-room JSON-LD: organization only. No ratings, no reviews, no invented stats. -->
@@ -119,8 +119,8 @@
             <div class="scrolly-step" id="demo-step-2" data-step="2">
               <span class="scrolly-step__n">3 · Decision</span>
               <h3 class="scrolly-step__title">Compare the trade-offs. Make the call.</h3>
-              <p class="scrolly-step__body">184 vests sit online, and your rule keeps at least 65% there. Outturn prepares a transfer option for the 9 stores where the pants are selling. Compare it with a more conservative floor, then approve the decision.</p>
-              <p class="scrolly-step__hint">Try it: switch the online floor, then approve the decision.</p>
+              <p class="scrolly-step__body">Outturn prepares the commercial decision, brings together the relevant evidence, and makes the trade-offs explicit. Compare the options, apply your judgment, and approve the path forward with confidence.</p>
+              <p class="scrolly-step__hint">Try it: compare the options, then approve the decision.</p>
             </div>
             <div class="scrolly-step" id="demo-step-3" data-step="3">
               <span class="scrolly-step__n">4 · Execution</span>
@@ -211,22 +211,58 @@
                   <!-- Stage 3 · Decision -->
                   <div class="dstage" data-stage="2">
                     <p class="dstage__kicker">RD-0051 · human decision required</p>
-                    <h4 class="dstage__h">The play is prepared. The call is yours.</h4>
-                    <div class="dpills">
-                      <span>Online floor:</span>
-                      <button type="button" class="dpill is-selected" data-option="0">Keep 65% online · company rule</button>
-                      <button type="button" class="dpill" data-option="1">Keep 70% online · conservative</button>
+                    <h4 class="dstage__h">Protect store sales or preserve online availability?</h4>
+                    <p class="dstage__sub ddecision-intro">Nine stores are out of stock of linen suit vests while 184 units remain online. Pants are selling as sets, but company policy requires at least 65% of vest inventory to remain online.</p>
+
+                    <div class="doptions" role="radiogroup" aria-label="Commercial decision options">
+                      <button type="button" class="doption is-selected" data-option="0" role="radio" aria-checked="true">
+                        <span class="doption__label">Recommended option</span>
+                        <strong>Protect store availability</strong>
+                        <span class="doption__summary">Transfer 64 vests to the nine stores where matching pants are selling.</span>
+                        <span class="doption__columns">
+                          <span><small>Commercial upside</small>Protects an estimated $22,336 in set sales<br>Restores availability in 9 stores<br>Supports current pants demand</span>
+                          <span><small>Trade-off</small>Online inventory falls to the company minimum<br>120 vests remain online<br>65.2% stays available online</span>
+                        </span>
+                        <span class="doption__policy">✓ Company online-floor rule satisfied</span>
+                        <span class="doption__badge">Recommended</span>
+                      </button>
+                      <button type="button" class="doption" data-option="1" role="radio" aria-checked="false">
+                        <span class="doption__label">Alternative</span>
+                        <strong>Protect online availability</strong>
+                        <span class="doption__summary">Transfer 55 vests and retain a larger online inventory buffer.</span>
+                        <span class="doption__columns">
+                          <span><small>Commercial upside</small>Maintains 70% of vest inventory online<br>Provides greater protection against online demand<br>Reduces digital stockout risk</span>
+                          <span><small>Trade-off</small>Fewer units reach the affected stores<br>Some stores remain exposed to lost set sales<br>Estimated value protected falls to $18,420</span>
+                        </span>
+                        <span class="doption__policy">✓ Company online-floor rule satisfied</span>
+                      </button>
                     </div>
+
+                    <div class="dcomparison" aria-label="Option comparison">
+                      <div class="dcomparison__row dcomparison__head"><span></span><b>Protect stores</b><b>Protect online</b></div>
+                      <div class="dcomparison__row"><span>Units transferred</span><b>64</b><b>55</b></div>
+                      <div class="dcomparison__row"><span>Stores fully covered</span><b>9</b><b>6</b></div>
+                      <div class="dcomparison__row"><span>Online inventory remaining</span><b>120</b><b>129</b></div>
+                      <div class="dcomparison__row"><span>Online inventory share</span><b>65.2%</b><b>70.1%</b></div>
+                      <div class="dcomparison__row"><span>Estimated value protected</span><b>$22,336</b><b>$18,420</b></div>
+                      <div class="dcomparison__row"><span>Company policy</span><b>Satisfied</b><b>Satisfied</b></div>
+                    </div>
+
                     <div class="ddecision">
                       <small>Prepared decision</small>
-                      <b class="ddecision__rec" id="dRec">Send 64 vests to the 9 stores. The pants sell them as sets; online keeps its floor.</b>
+                      <b class="ddecision__rec" id="dRec">Transfer 64 vests to the nine stores before the weekend.</b>
+                      <p class="ddecision__why" id="dDecisionWhy">This option protects the highest amount of expected set sales while maintaining the company’s online inventory floor.</p>
                       <div class="ddecision__money">
                         <div><small>Value protected</small><b id="dProtected">$22,336</b></div>
                         <div><small>Decision deadline</small><b id="dDeadline">Today, 16:00</b></div>
                       </div>
-                      <button type="button" class="dbtn dbtn--copper" id="dApprove">Approve and route the action</button>
+                      <div class="ddecision__actions">
+                        <button type="button" class="dbtn dbtn--copper" id="dApprove">Approve and execute</button>
+                        <button type="button" class="dbtn" id="dChooseAlternative">Choose alternative</button>
+                      </div>
+                      <p class="ddecision__helper">Execution tasks will be created automatically and routed to the responsible teams.</p>
                     </div>
-                    <div class="dchecks" id="dChecks"></div>
+                    <div class="dvalidation" id="dChecks" aria-label="Decision validation"></div>
                   </div>
 
                   <!-- Stage 4 · Execution -->
@@ -939,6 +975,6 @@
     </div>
   </footer>
 
-  <script src="main.js?v=10"></script>
+  <script src="main.js?v=11"></script>
 </body>
 </html>
