@@ -163,18 +163,7 @@ The glass treatment should remain subtle. The product demo itself keeps its orig
 
 ## Pilot and FAQ
 
-The homepage was simplified around a YC-style product story:
-
-1. A concrete hero that explains what Outturn does
-2. The existing interactive retail decision demo
-3. Three product benefits: assembled context, explicit trade-offs, and reusable outcomes
-4. A focused four-week pilot CTA
-
-The hero headline is now `Make the decision. Skip the search.` The supporting copy explains that Outturn prepares commercial decisions by bringing relevant data, company knowledge, and prior outcomes together.
-
-The pilot section asks teams to begin with one high-value decision area. The request form now asks which commercial decision the retailer would start with, rather than using firefighting language.
-
-The FAQ remains in the source for reuse but is hidden from the homepage to keep the main journey concise. The dedicated Problem, How It Works, and Honest AI pages remain in navigation.
+The pilot section now presents a four-week pilot and the request form without the previous detailed weekly plan or unverified claims.
 
 Current FAQ topics:
 
