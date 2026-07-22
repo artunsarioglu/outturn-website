@@ -7,7 +7,7 @@
   <meta name="description" content="Outturn is an AI Decision System for Retail that brings company memory, commercial context and human expertise to every decision." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231A131B'/><rect x='9' y='20' width='5' height='5' fill='%23C9795B'/></svg>" />
   <link rel="preload" href="fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="styles.css?v=58" />
+  <link rel="stylesheet" href="styles.css?v=59" />
   <script>document.documentElement.classList.replace('no-js', 'js');</script>
 </head>
 <body class="problem-page">
@@ -56,15 +56,19 @@
           <p>The relevant context may live across sales and inventory data, planning reports, policies, previous decisions, conversations and the experience of people across the business. Teams can access each source individually. The difficult part is knowing what matters for the decision in front of them.</p>
           <p class="problem-story__closing">Commercial teams spend valuable attention reconstructing the situation before they can apply judgment.</p>
         </div>
-        <div class="context-map" aria-label="Business information brought together around a commercial decision">
-          <span>Sales data</span>
-          <span>Inventory</span>
-          <span>Planning reports</span>
-          <span>Policies</span>
-          <span>Past decisions</span>
-          <span>Conversations</span>
-          <span>Human expertise</span>
-          <strong>Decision context</strong>
+        <div class="context-scene" aria-label="Decision context scattered across business sources">
+          <div class="context-scene__source context-scene__source--sales"><small>Current state</small><strong>Sales data</strong><span>What is happening now</span></div>
+          <div class="context-scene__source context-scene__source--reports"><small>Plan</small><strong>Planning reports</strong><span>What the team expected</span></div>
+          <div class="context-scene__source context-scene__source--memory"><small>History</small><strong>Past decisions</strong><span>What was tried before</span></div>
+          <div class="context-scene__source context-scene__source--inventory"><small>Availability</small><strong>Inventory</strong><span>Where the options are</span></div>
+          <div class="context-scene__source context-scene__source--people"><small>Experience</small><strong>People</strong><span>What the business knows</span></div>
+          <div class="context-scene__source context-scene__source--conversation"><small>Recent context</small><strong>Conversations</strong><span>What has changed</span></div>
+          <div class="context-scene__decision">
+            <small>Commercial decision</small>
+            <strong>What should we do now?</strong>
+            <span>Context reconstructed by the team</span>
+          </div>
+          <p class="context-scene__note">The sources are available.<br>The decision context is not.</p>
         </div>
       </div>
     </section>

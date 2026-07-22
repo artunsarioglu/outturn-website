@@ -102,7 +102,7 @@ The existing `the-problem.html` route now positions Outturn as an AI Decision Sy
 
 The hero leads with: “Retail teams keep reconstructing decisions the business has already faced.” It explains that relevant information exists across systems, reports, conversations and people, but is rarely assembled at the moment of decision.
 
-The page uses the existing visual system and introduces four concise explanatory patterns: a decision-context map, a decision-memory card, converging commercial decision cards, an operational-record comparison, and a situation-to-learning path. It avoids alerting language and does not position Outturn as a forecasting, pricing, replenishment or allocation engine.
+The page uses the existing visual system and introduces concise explanatory patterns: scattered business sources around an incomplete commercial decision, a decision-memory card, converging commercial decision cards, an operational-record comparison, and a situation-to-learning path. It avoids alerting language and does not position Outturn as a forecasting, pricing, replenishment or allocation engine.
 
 The interactive demo follows a decision through these five stages:
 
