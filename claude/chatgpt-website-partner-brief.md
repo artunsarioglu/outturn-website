@@ -92,14 +92,15 @@ The page emphasizes deterministic calculations, source-linked evidence, human ap
 
 ## Demo narrative
 
-The interactive demo follows a decision through these stages:
+The interactive demo follows a decision through these five stages:
 
 1. Your day, prepared
-2. Ready to review
-3. Context reconciled
-4. Decision
-5. Execution
-6. Outcome measured
+2. Context reconciled
+3. Decision
+4. Execution
+5. Outcome measured
+
+The previous standalone decision-summary screen was merged into the context screen. The Linen Suit decision title, commercial exposure, supporting facts, cited sources, and calculation now appear on one screen.
 
 The first step currently reads:
 

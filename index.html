@@ -110,29 +110,24 @@
               <h3 class="scrolly-step__title">Start with the work already done.</h3>
               <p class="scrolly-step__body">Before you start the day, Outturn reviews your reports, emails, sales, and inventory signals across siloed data systems. It brings the decisions that need your judgment to the top and updates them as new signals appear.</p>
             </div>
-            <div class="scrolly-step" id="demo-step-leak" data-step="1">
-              <span class="scrolly-step__n">2 · Ready to review</span>
-              <h3 class="scrolly-step__title">Open a decision without hunting for context.</h3>
-              <p class="scrolly-step__body">Each item is already framed as a decision, with the commercial impact, the relevant signals and the next action. Open the priority that matters most and go straight to the evidence.</p>
-            </div>
-            <div class="scrolly-step" id="demo-step-2" data-step="2">
+            <div class="scrolly-step" id="demo-step-1" data-step="1">
               <span class="scrolly-step__n">2 · Context reconciled</span>
               <h3 class="scrolly-step__title">Open the context behind the decision.</h3>
               <p class="scrolly-step__body">Pants sell-through, store and online vest stock, and the e-commerce floor rule land on one record. Every signal is cited to its source rows; every number can be recomputed.</p>
               <p class="scrolly-step__hint">Try it: tap the source chips and open the calculation.</p>
             </div>
-            <div class="scrolly-step" id="demo-step-3" data-step="3">
+            <div class="scrolly-step" id="demo-step-2" data-step="2">
               <span class="scrolly-step__n">3 · Decision</span>
               <h3 class="scrolly-step__title">Compare the trade-offs. Make the call.</h3>
               <p class="scrolly-step__body">184 vests sit online, and your rule keeps at least 65% there. Outturn prepares a transfer option for the 9 stores where the trousers are selling. Compare it with a more conservative floor, then approve the decision.</p>
               <p class="scrolly-step__hint">Try it: switch the online floor, then approve the decision.</p>
             </div>
-            <div class="scrolly-step" id="demo-step-4" data-step="4">
+            <div class="scrolly-step" id="demo-step-3" data-step="3">
               <span class="scrolly-step__n">4 · Execution</span>
               <h3 class="scrolly-step__title">Carry the decision into the systems that do the work.</h3>
               <p class="scrolly-step__body">The approved decision becomes a transfer draft in <em>your</em> order system, routed to store ops and tracked to completion. Outturn does not replace those systems; it keeps the decision and its progress connected.</p>
             </div>
-            <div class="scrolly-step" id="demo-step-5" data-step="5">
+            <div class="scrolly-step" id="demo-step-4" data-step="4">
               <span class="scrolly-step__n">5 · Outcome measured</span>
               <h3 class="scrolly-step__title">What happened next improves the next decision.</h3>
               <p class="scrolly-step__body">Seven days later, the same record reads the same systems and writes the outcome back. RD-0051 becomes evidence for the next similar decision, building the shared memory your team keeps.</p>
@@ -161,10 +156,10 @@
                 </div>
                 <div class="demo-rail" role="group" aria-label="Decision lifecycle stages">
                   <button type="button" class="is-active" data-go="0">Detected</button>
-                  <button type="button" data-go="2">Context</button>
-                  <button type="button" data-go="3">Decision</button>
-                  <button type="button" data-go="4">Execution</button>
-                  <button type="button" data-go="5">Outcome</button>
+                  <button type="button" data-go="1">Context</button>
+                  <button type="button" data-go="2">Decision</button>
+                  <button type="button" data-go="3">Execution</button>
+                  <button type="button" data-go="4">Outcome</button>
                 </div>
                 <div class="demo-panel__stages">
 
@@ -186,18 +181,10 @@
                     <div class="dstage__actions"><button type="button" class="dbtn dbtn--primary" data-go="1">Open the priority decision →</button></div>
                   </div>
 
-                  <!-- Stage 2 · the prioritised daily queue -->
+                  <!-- Decision summary and reconciled context combined in one stage. -->
                   <div class="dstage" data-stage="1">
-                    <p class="dstage__kicker">Decision brief · RD-0051 · Women’s Tailoring · Stores + Online</p>
+                    <p class="dstage__kicker">Decision brief · RD-0051 · context reconciled</p>
                     <h4 class="dstage__h">Linen suit vests are out of stock in 9 stores.</h4>
-                    <div class="drisk"><span>Sales at risk</span><b>$27,222</b></div>
-                    <p class="dstage__sub">The matching trousers are still selling. Outturn has brought together the transfer options, the commercial trade-offs and the evidence needed to make the call.</p>
-                    <div class="dstage__actions"><button type="button" class="dbtn dbtn--primary" data-go="2">Review the context →</button></div>
-                  </div>
-
-                  <!-- Stage 2 · Context reconciled -->
-                  <div class="dstage" data-stage="2">
-                    <p class="dstage__kicker">RD-0051 · context reconciled</p>
                     <div class="drisk"><span>Set sales at risk</span><b id="dRisk">$27,222</b></div>
                     <div class="dfacts">
                       <div class="dfact"><span>Trousers in stores</span><b>312</b></div>
@@ -215,13 +202,13 @@
                     <p class="dsource-detail" id="dSourceDetail">POS · 09:12 · 312 trousers selling in the 9 stores. 1 in 4 buyers adds the vest.</p>
                     <div class="dstage__actions">
                       <button type="button" class="dbtn" id="dCalcToggle" aria-expanded="false">Show the calculation</button>
-                      <button type="button" class="dbtn dbtn--primary" data-go="3">See the decision →</button>
+                      <button type="button" class="dbtn dbtn--primary" data-go="2">See the decision →</button>
                     </div>
                     <p class="dmath" id="dMath" hidden>312 trousers × 25% set rate × $349 = <b>$27,222 set sales at risk</b><br />Computed in code from the rows above and your own set assumption. Not a demand forecast.</p>
                   </div>
 
                   <!-- Stage 3 · Decision -->
-                  <div class="dstage" data-stage="3">
+                  <div class="dstage" data-stage="2">
                     <p class="dstage__kicker">RD-0051 · human decision required</p>
                     <h4 class="dstage__h">The play is prepared. The call is yours.</h4>
                     <div class="dpills">
@@ -242,7 +229,7 @@
                   </div>
 
                   <!-- Stage 4 · Execution -->
-                  <div class="dstage" data-stage="4">
+                  <div class="dstage" data-stage="3">
                     <p class="dstage__kicker">RD-0051 · routed to execution</p>
                     <h4 class="dstage__h" id="dExecH">The yes became a store-transfer draft in your order system.</h4>
                     <span class="dstatus">Execution in progress</span>
@@ -253,11 +240,11 @@
                       <div class="devent"><small>+7 days</small><b>Outcome will be measured</b><span>Sales and stock read again from the same systems.</span></div>
                     </div>
                     <p class="dguard"><b>No write without a human approval.</b> Outturn routed the approved action into your system and tracks it. It didn’t replace the system.</p>
-                    <div class="dstage__actions"><button type="button" class="dbtn dbtn--primary" data-go="5">See the outcome, 7 days later →</button></div>
+                    <div class="dstage__actions"><button type="button" class="dbtn dbtn--primary" data-go="4">See the outcome, 7 days later →</button></div>
                   </div>
 
                   <!-- Stage 5 · Outcome measured -->
-                  <div class="dstage" data-stage="5">
+                  <div class="dstage" data-stage="4">
                     <p class="dstage__kicker">RD-0051 · 7 days later</p>
                     <b class="doutcome" id="dOutcome">+$18,846</b>
                     <p class="dcaption" id="dCaption">7-day sales from the transferred vests. Observed, not a causal claim. The trousers they complete keep selling.</p>
@@ -951,6 +938,6 @@
     </div>
   </footer>
 
-  <script src="main.js?v=8"></script>
+  <script src="main.js?v=9"></script>
 </body>
 </html>
