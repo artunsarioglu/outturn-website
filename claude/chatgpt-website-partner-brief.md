@@ -108,7 +108,7 @@ The fragmented-context visual animates once it enters the viewport. Source cards
 
 ## ROI on How It Works
 
-The existing `how-it-works.html` page includes a complete ROI section below the product architecture. It uses an explicitly illustrative four-week pilot model across commercial value, decision quality and organizational learning, plus operational speed and coordination. All sample values are labeled as illustrative and the calculation formulas are shown so each metric can be recomputed from retailer source data.
+The existing `how-it-works.html` page places a “Where we sit” comparison directly below the product architecture, positioning Outturn as the decision layer between commercial intelligence and execution. A concise ROI section follows with an illustrative four-week pilot summary, three value layers, four transparent formulas, a compact weekly table and a short decision-memory compounding strip.
 
 The interactive demo follows a decision through these five stages:
 
