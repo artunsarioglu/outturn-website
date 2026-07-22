@@ -100,6 +100,8 @@ The decision stage compares two commercial outcomes, “Protect store availabili
 
 The existing `the-problem.html` route now positions Outturn as an AI Decision System for Retail. The page explains six connected problems: fragmented decision context, company knowledge that is hard to reuse, the combined impact of distributed commercial choices, judgment lost in operational systems, outcomes disconnected from decisions, and more AI recommendations without organizational learning.
 
+The hero leads with: “Retail teams keep reconstructing decisions the business has already faced.” It explains that relevant information exists across systems, reports, conversations and people, but is rarely assembled at the moment of decision.
+
 The page uses the existing visual system and introduces four concise explanatory patterns: a decision-context map, a decision-memory card, converging commercial decision cards, an operational-record comparison, and a situation-to-learning path. It avoids alerting language and does not position Outturn as a forecasting, pricing, replenishment or allocation engine.
 
 The interactive demo follows a decision through these five stages:

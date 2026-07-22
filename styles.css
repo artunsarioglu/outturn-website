@@ -1432,6 +1432,7 @@ h1,h2,h3,h4{font-optical-sizing:auto;text-wrap:balance}
 .problem-page .problem-intro .container{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center}
 .problem-page .problem-intro h1{max-width:16ch;margin:.55rem 0 1.25rem;font-size:var(--page-title);font-weight:585;line-height:.92;letter-spacing:-.075em}
 .problem-page .problem-intro>div>p:not(.eyebrow):not(.problem-intro__support){max-width:750px;margin:0;color:var(--muted);font-size:var(--body-large);font-weight:420;line-height:1.66;letter-spacing:-.009em}
+.problem-page .problem-intro>div>.problem-intro__consequence{margin-top:.8rem;color:var(--black);font-weight:560}
 .problem-intro__support{max-width:680px;margin:1.8rem 0 0;padding-top:1.3rem;border-top:1px solid rgba(23,17,22,.13);color:var(--black);font-size:clamp(1rem,1.5vw,1.2rem);font-weight:650;letter-spacing:-.02em}
 .problem-story{padding:clamp(5rem,9vw,8rem) 0;border-top:1px solid rgba(23,17,22,.09)}
 .problem-story:nth-of-type(even){background:rgba(255,255,255,.32)}
