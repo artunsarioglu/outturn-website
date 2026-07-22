@@ -166,6 +166,9 @@ Current FAQ topics:
 - `7e48bf0` Tighten the hero product description
 - `8d04cf9` Capitalize the hero guarantees
 - `38c502b` Clarify the siloed systems in the demo narrative
+- `a034e53` Add the website partner handoff brief
+- `7e69f86` Refocus the hero on decision memory
+- `893b5ab` Combine the decision summary with its context
 
 ## Required PR closeout
 
