@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Honest AI | Outturn.ai</title>
+  <meta name="description" content="Outturn uses AI to accelerate research and reconciliation while keeping decision math auditable and actions human-approved." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231A131B'/><rect x='9' y='20' width='5' height='5' fill='%23C9795B'/></svg>" />
+  <link rel="preload" href="fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="styles.css?v=71" />
+  <script>document.documentElement.classList.replace('no-js', 'js');</script>
+</head>
+<body class="honest-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a class="brand" href="index.html#top" aria-label="Outturn.ai home">
+        <img class="brand__logo" src="assets/outturn-ai-logo.png" width="622" height="144" alt="" aria-hidden="true" />
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a class="nav__link" href="index.html#demo">Product demo</a>
+        <a class="nav__link" href="the-problem.html">The problem</a>
+        <a class="nav__link" href="how-it-works.html">How it works</a>
+        <a class="nav__link is-current" href="honest-ai.html">Honest AI</a>
+      </nav>
+      <a class="btn btn--primary nav__cta" href="index.html#pilot">Request a pilot</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navSheet">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+    <div class="nav__sheet" id="navSheet">
+      <a href="index.html#demo">Product demo</a>
+      <a href="the-problem.html">The problem</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="honest-ai.html">Honest AI</a>
+      <a class="btn btn--primary" href="index.html#pilot">Request a pilot</a>
+    </div>
+  </header>
+
+  <main id="main" class="honest-main">
+    <section class="section section--ink" id="honest" aria-labelledby="honest-h">
+      <div class="container container--narrow">
+        <header class="section-head">
+          <p class="eyebrow">Honest AI. Our favorite sales pitch.</p>
+          <h1 class="h-section" id="honest-h">No black-box forecasts. No autonomous agents inside your systems. The math is published.</h1>
+          <p class="lead">AI models are not reliable reasoners. They are excellent accelerators and researchers. No model ever computes your money. AI reads and reconciles messy sources, proposes scenarios and rules for human review, and narrates results after the numbers are final.</p>
+        </header>
+
+        <article class="recon-ledger" aria-label="The layer knows when not to act">
+          <p class="recon-ledger__q">The part that earns trust: the layer knows when <em>not</em> to act.</p>
+          <div class="ledger">
+            <div class="driver">
+              <span class="driver__label"><b class="lane lane--hold">ON HOLD</b> Miller graphic tee. Don't decide on bad numbers.</span>
+              <span class="driver__val">$32,640</span>
+              <span class="driver__cite">↳
+                <button type="button" class="cite-chip" aria-expanded="false" aria-controls="src-honest-1">Chicago's Saturday file: 388 rows of 1,340 expected<span class="chip-hint">show the rows</span></button>
+                <span class="source-row" id="src-honest-1" hidden><span class="source-row__inner"><b>feed_log</b> · Chicago State St · 2026-07-04 · 388 of 1,340 rows · status <b>partial</b>. Every decision priced off Chicago waits for the file, not the guess.</span></span>
+              </span>
+            </div>
+            <div class="driver">
+              <span class="driver__label"><b class="lane lane--human">NEEDS A HUMAN</b> Vega crop cardigan. No rule explains it.</span>
+              <span class="driver__val">$22,080</span>
+              <span class="driver__cite">↳
+                <button type="button" class="cite-chip" aria-expanded="false" aria-controls="src-honest-2">205/week until mid-June · 34/week since<span class="chip-hint">show the rows</span></button>
+                <span class="source-row" id="src-honest-2" hidden><span class="source-row__inner"><b>sales</b> · 205/wk → 34/wk in two weeks · <b>price_changes</b> · none · <b>inventory</b> · sizes full. A style does not lose 83% of its sales for no reason. A human looks before anyone prices.</span></span>
+              </span>
+            </div>
+            <div class="driver driver--muted">
+              <span class="driver__label">210 styles trading to plan. Nothing needed, nobody paged.</span>
+              <span class="driver__val">✓</span>
+            </div>
+          </div>
+        </article>
+
+        <div class="govbar">
+          <span>read-only queries, enforced</span>
+          <span>zero model calls in the decision math</span>
+          <span>human-approved writes</span>
+          <span>append-only audit log</span>
+        </div>
+        <p class="honesty">"AI can't reason" is a contested claim, and we do not make it. Ours is narrower: today's models are not <em>reliable</em> reasoners. We keep them out of the loop that computes your money entirely. Code you can audit.</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var button = document.getElementById('navToggle');
+      var sheet = document.getElementById('navSheet');
+      if (button && sheet) button.addEventListener('click', function () {
+        var open = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', String(!open));
+        sheet.classList.toggle('is-open', !open);
+      });
+      Array.prototype.forEach.call(document.querySelectorAll('.cite-chip'), function (chip) {
+        var panel = document.getElementById(chip.getAttribute('aria-controls'));
+        if (!panel) return;
+        chip.addEventListener('click', function () {
+          var open = chip.getAttribute('aria-expanded') === 'true';
+          chip.setAttribute('aria-expanded', String(!open));
+          panel.hidden = open;
+        });
+      });
+    }());
+  </script>
+</body>
+</html>
