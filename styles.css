@@ -722,8 +722,12 @@ body{background:var(--bg);letter-spacing:-.006em}
 .hero h1{font-size:clamp(3.2rem,7vw,6.25rem);font-weight:630;line-height:.94;letter-spacing:-.075em;max-width:15ch;text-wrap:balance}
 .hero__sub{font-size:clamp(1rem,1.55vw,1.2rem);line-height:1.7;max-width:64ch;margin-top:1.8rem}
 .hero__ctas{margin-top:2.4rem}
-.hero__chips{gap:0;margin-top:3rem;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.hero__chips li{background:transparent;border-radius:0;padding:.75rem 1.15rem;font-family:var(--mono);font-size:.62rem;letter-spacing:.02em}
+.hero__chips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:3rem;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.hero__chips li{display:flex;align-items:center;justify-content:center;gap:.5rem;text-align:center;
+  background:transparent;border-radius:0;padding:.9rem 1.1rem;font-size:.8rem;font-weight:550;
+  color:var(--text);white-space:normal;line-height:1.4}
+.hero__chips li::before{content:"✓";color:var(--accent);font-weight:700;flex:none}
 .hero__chips li+li{border-left:1px solid var(--line)}
 
 .demo-scrolly{padding-top:clamp(5rem,8vw,7rem)}
@@ -773,8 +777,8 @@ body{background:var(--bg);letter-spacing:-.006em}
   .hero__editorial{align-items:flex-start;text-align:left}
   .hero h1{font-size:clamp(2.8rem,14vw,4.4rem)}
   .hero__ctas{justify-content:flex-start}
-  .hero__chips{display:grid;width:100%;border-bottom:0}
-  .hero__chips li{border-bottom:1px solid var(--line);padding:.7rem 0}
+  .hero__chips{display:grid;grid-template-columns:1fr;width:100%;border-bottom:0}
+  .hero__chips li{justify-content:flex-start;text-align:left;border-bottom:1px solid var(--line);padding:.7rem .2rem}
   .hero__chips li+li{border-left:0}
   .section{padding:clamp(4.5rem,16vw,7rem) 0}
 }
@@ -1615,9 +1619,9 @@ h1,h2,h3,h4{font-optical-sizing:auto;text-wrap:balance}
 @media(max-width:760px){.attention-visual__track{min-height:11rem}.attention-visual__rebuild{width:66%}.attention-visual__left{width:34%}.js .attention-visual.is-in-view .attention-visual__rebuild{width:66%}.js .attention-visual.is-in-view .attention-visual__left{width:34%}.attention-visual__squeezed{display:grid;grid-template-columns:1fr 1fr}.attention-visual__parallel>div{display:grid;grid-template-columns:1fr 1fr;gap:.45rem;padding:0}.attention-visual__parallel b,.attention-visual__parallel b:first-child{min-width:0;margin:0;transform:none!important}.attention-visual__parallel b:last-child{grid-column:1/-1}.attention-visual>footer{grid-template-columns:1fr}.attention-visual>footer em{justify-self:start}}
 @media(max-width:480px){.attention-visual__track{flex-direction:column}.attention-visual__rebuild,.attention-visual__left,.js .attention-visual.is-in-view .attention-visual__rebuild,.js .attention-visual.is-in-view .attention-visual__left{width:100%}.attention-visual__track>div{min-height:6rem}.attention-visual__squeezed{grid-template-columns:1fr}.attention-visual__scale{display:none}}
 
-/* ===== click-through demo (tour): views, pills, library, rules ===== */
-.demo-tour{max-width:700px;margin:0 auto}
+/* ===== demo tour: views, pills, library, rules (panel rides the scrolly) ===== */
 .demo-panel--tour{width:100%}
+.scrolly.is-offflow .scrolly__steps{opacity:.22;transition:opacity .3s ease}
 .demo-panel__nav{display:flex;gap:.4rem;margin:0 .4rem}
 .demo-panel__nav button{border:1px solid rgba(251,247,243,.18);background:transparent;color:var(--on-dark-muted);
   font:700 .58rem/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:.42rem .7rem;
@@ -1656,7 +1660,6 @@ h1,h2,h3,h4{font-optical-sizing:auto;text-wrap:balance}
 .drule-form textarea:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
 .drule-form__actions{display:flex;gap:.5rem;margin-top:.55rem;justify-content:flex-end}
 @media(max-width:640px){
-  .demo-panel--tour{height:min(72vh,600px)}
   .demo-panel__nav{order:3;flex-basis:100%;justify-content:flex-start;margin:.55rem 0 0}
   .demo-panel--tour .demo-panel__top{flex-wrap:wrap}
   .dcase{grid-template-columns:minmax(0,1fr) auto}

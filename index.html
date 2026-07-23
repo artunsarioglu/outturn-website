@@ -23,7 +23,7 @@
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231A131B'/><rect x='9' y='20' width='5' height='5' fill='%23C9795B'/></svg>" />
   <link rel="preload" href="fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="styles.css?v=69" />
+  <link rel="stylesheet" href="styles.css?v=70" />
   <script>document.documentElement.classList.replace('no-js', 'js');</script>
 
   <!-- Clean-room JSON-LD: organization only. No ratings, no reviews, no invented stats. -->
@@ -73,9 +73,9 @@
     <section class="hero" aria-labelledby="hero-h1">
       <div class="container hero__inner">
         <div class="hero__editorial">
-          <p class="eyebrow">Retail records every transaction — and forgets every decision.</p>
-          <h1 id="hero-h1">Every transaction has a record.<br /><em class="em-why">Every decision should.</em></h1>
-          <p class="hero__sub">Outturn prepares the decision — context assembled, math shown, every number cited to its source. A named person makes the call, the approved action leaves as a draft for your own systems, and the measured outcome is written back onto the record for the next time.</p>
+          <p class="eyebrow">Decision records for retail — prepared, approved, routed, remembered.</p>
+          <h1 id="hero-h1">Your systems remember every sale.<br /><em class="em-why">None remembers the decision.</em></h1>
+          <p class="hero__sub">Outturn prepares each decision with the math shown, recommends the play from rules you can read, routes the approved action into your systems as a draft — and remembers what happened, so the next call opens with evidence.</p>
           <div class="hero__ctas">
             <a class="btn btn--primary btn--lg" href="#pilot">
               Request a 4-week pilot
@@ -84,32 +84,63 @@
             <a class="btn btn--ghost btn--lg" href="#demo">Watch a $27,222 decision happen ↓</a>
           </div>
           <ul class="hero__chips" aria-label="The guarantees">
-            <li>Retail rules you can read, plus the ones you teach it</li>
-            <li>Every number computed in code and cited</li>
-            <li>Writes leave as drafts — a named person approves</li>
-            <li>Outcomes written back — including the misses</li>
+            <li>Every number cited to its rows</li>
+            <li>Actions leave as drafts — a named yes approves</li>
+            <li>Outcomes written back, wins and misses</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- ===================== LIVE DEMO (click-through) ===================== -->
-    <!-- One Decision Record, five gated steps. No narration column: each screen
-         carries one idea in one or two lines. Two extra views: the decision
-         library (same record, other decisions) and the company rules (built-in
-         packs + taught corrections, all pending a named approval).
-         Progressive enhancement: without JS the stockout case renders statically
-         on stage one. -->
+    <!-- ===================== LIVE DEMO (scroll-driven) ===================== -->
+    <!-- One Decision Record, five short screens. Scroll drives the pinned panel
+         through the stages (one-line narration per step); the rail and in-panel
+         buttons jump too. Two extra views: the decision library (same record,
+         other decisions) and the company rules (built-in packs + taught
+         corrections, all pending a named approval). Progressive enhancement:
+         without JS the stockout case renders statically on stage one. -->
     <section class="section demo-scrolly" id="demo" aria-label="Outturn product demo">
       <div class="container container--narrow">
         <header class="section-head reveal">
           <p class="eyebrow">See it live</p>
-          <h2 class="h-section">One decision, five steps.<br />Click through it.</h2>
+          <h2 class="h-section">One decision, five steps.<br />Just scroll.</h2>
         </header>
       </div>
       <div class="container">
-        <div class="demo-tour reveal">
-          <div class="demo-panel demo-panel--tour" aria-label="Interactive demo: one Decision Record">
+        <div class="scrolly" id="demo-detail">
+          <!-- narration column: one line per step; the panel carries the detail -->
+          <div class="scrolly__steps">
+            <div class="scrolly-step is-active" id="demo-step-0" data-step="0">
+              <span class="scrolly-step__n">1 · Detected</span>
+              <h3 class="scrolly-step__title">The alert becomes a record.</h3>
+              <p class="scrolly-step__body">Today this dies in a thread. Outturn opens <b>RD-0051</b> instead.</p>
+            </div>
+            <div class="scrolly-step" id="demo-step-1" data-step="1">
+              <span class="scrolly-step__n">2 · Context</span>
+              <h3 class="scrolly-step__title">Every source, one card.</h3>
+              <p class="scrolly-step__hint">Try it: tap the chips, open the calculation.</p>
+            </div>
+            <div class="scrolly-step" id="demo-step-2" data-step="2">
+              <span class="scrolly-step__n">3 · Decision</span>
+              <h3 class="scrolly-step__title">Two options, prepared. Alex makes the call.</h3>
+              <p class="scrolly-step__hint">Try it: switch the option — the numbers follow. Then approve.</p>
+            </div>
+            <div class="scrolly-step" id="demo-step-3" data-step="3">
+              <span class="scrolly-step__n">4 · Execution</span>
+              <h3 class="scrolly-step__title">The yes leaves as a draft.</h3>
+              <p class="scrolly-step__body">In your order system. Your team releases it.</p>
+            </div>
+            <div class="scrolly-step" id="demo-step-4" data-step="4">
+              <span class="scrolly-step__n">5 · Outcome</span>
+              <h3 class="scrolly-step__title">Measured. Win or miss, on the record.</h3>
+              <p class="scrolly-step__hint">Then: try another decision, or teach it a rule.</p>
+            </div>
+          </div>
+
+          <!-- pinned interactive panel -->
+          <div class="scrolly__stick">
+            <div class="scrolly__stick-inner">
+              <div class="demo-panel demo-panel--tour" aria-label="Interactive demo: one Decision Record">
             <div class="demo-panel__top">
               <span class="demo-panel__kicker"><span class="dot-live" aria-hidden="true"></span> DECISION BRIEFS</span>
               <nav class="demo-panel__nav" aria-label="Demo views">
@@ -267,6 +298,8 @@
 
             <p class="demo-panel__foot">Demo-seeded figures, not customer data. Every number opens to its rows.</p>
             <div class="demo-toast" id="dToast" role="status" aria-live="polite"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -908,6 +941,6 @@
     </div>
   </footer>
 
-  <script src="main.js?v=13"></script>
+  <script src="main.js?v=14"></script>
 </body>
 </html>

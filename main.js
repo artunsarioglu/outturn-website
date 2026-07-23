@@ -543,7 +543,8 @@
     ['KRL-08 · v1', 'Web and store prices match outside campaigns.', 'Built-in retail pack · read it line by line']
   ];
 
-  var active = 'stockout', option = 0, current = 0, visited = 0, barsPlayed = false;
+  var active = 'stockout', option = 0, current = 0, view = 'flow', barsPlayed = false;
+  var steps = Array.prototype.slice.call(root.querySelectorAll('.scrolly-step'));
 
   function toast(msg) {
     var t = $('dToast');
@@ -566,16 +567,26 @@
 
   function showStage(n) {
     current = Number(n);
-    visited = Math.max(visited, current);
     all('.dstage').forEach(function (s, i) { s.classList.toggle('is-active', i === current); });
-    all('[data-step]').forEach(function (b, i) {
+    all('.demo-rail button').forEach(function (b, i) {
       b.classList.toggle('is-active', i === current);
       b.classList.toggle('is-done', i < current);
     });
+    steps.forEach(function (s, i) { s.classList.toggle('is-active', i === current); });
     if (current === 4) playBars();
   }
 
+  /* scroll the matching narration step into view; the observer swaps the stage */
+  function goStep(n) {
+    var t = steps[n];
+    if (!t || !('IntersectionObserver' in window)) { showStage(Number(n)); return; }
+    t.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
+  }
+
   function showView(name) {
+    view = name;
+    var sc = root.querySelector('.scrolly');
+    if (sc) sc.classList.toggle('is-offflow', name !== 'flow');
     all('.dview').forEach(function (v) { v.classList.toggle('is-active', v.getAttribute('data-view') === name); });
     all('.demo-panel__nav button').forEach(function (b) { b.classList.toggle('is-active', b.getAttribute('data-viewgo') === name); });
     if (name === 'cases') renderCases();
@@ -663,10 +674,10 @@
     all('[data-case]').forEach(function (b) {
       b.addEventListener('click', function () {
         active = b.getAttribute('data-case');
-        option = 0; visited = 0;
+        option = 0;
         renderCase();
         showView('flow');
-        showStage(0);
+        goStep(0);
       });
     });
   }
@@ -679,13 +690,10 @@
 
   /* wire up */
   all('[data-go]').forEach(function (b) {
-    b.addEventListener('click', function () { showStage(Number(b.getAttribute('data-go'))); });
+    b.addEventListener('click', function () { goStep(Number(b.getAttribute('data-go'))); });
   });
-  all('[data-step]').forEach(function (b, i) {
-    b.addEventListener('click', function () {
-      if (i <= visited) showStage(i);
-      else toast('Finish this step first.');
-    });
+  all('.demo-rail button').forEach(function (b, i) {
+    b.addEventListener('click', function () { goStep(i); });
   });
   all('[data-viewgo]').forEach(function (b) {
     b.addEventListener('click', function () { showView(b.getAttribute('data-viewgo')); });
@@ -705,8 +713,7 @@
   });
   $('dApprove').addEventListener('click', function () {
     toast(CASES[active].options[option].toast);
-    visited = Math.max(visited, 3);
-    window.setTimeout(function () { showStage(3); }, 450);
+    window.setTimeout(function () { goStep(3); }, 500);
   });
   $('dNewRule').addEventListener('click', function () {
     $('dRuleForm').hidden = false;
@@ -725,6 +732,28 @@
     renderRules();
     toast('Submitted. It takes effect only after a named approval.');
   });
+
+  /* scroll drives the stage; the trigger band sits lower on small screens
+     where the panel is pinned to the top. Rebuilt on breakpoint change. */
+  if ('IntersectionObserver' in window) {
+    var mq = window.matchMedia('(max-width: 960px)');
+    var io = null;
+    var buildObserver = function () {
+      if (io) io.disconnect();
+      io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          if (view !== 'flow') return;
+          showStage(Number(entry.target.getAttribute('data-step')));
+        });
+      }, { rootMargin: mq.matches ? '-64% 0px -14% 0px' : '-42% 0px -42% 0px', threshold: 0 });
+      steps.forEach(function (s) { io.observe(s); });
+    };
+    buildObserver();
+    if (mq.addEventListener) mq.addEventListener('change', buildObserver);
+  } else {
+    steps.forEach(function (s) { s.classList.add('is-active'); });
+  }
 
   renderCase();
 })();
