@@ -23,7 +23,7 @@
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231A131B'/><rect x='9' y='20' width='5' height='5' fill='%23C9795B'/></svg>" />
   <link rel="preload" href="fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="styles.css?v=56" />
+  <link rel="stylesheet" href="styles.css?v=68" />
   <script>document.documentElement.classList.replace('no-js', 'js');</script>
 
   <!-- Clean-room JSON-LD: organization only. No ratings, no reviews, no invented stats. -->
@@ -75,7 +75,7 @@
         <div class="hero__editorial">
           <p class="eyebrow">AI-native decision OS for retail.</p>
           <h1 id="hero-h1">The decision system for<br /><em class="em-why">retail teams.</em></h1>
-          <p class="hero__sub">Outturn gives retail teams the context to make better commercial decisions, remembers why decisions were made and what happened next, so every future decision starts smarter than the last.</p>
+          <p class="hero__sub">Outturn prepares each commercial decision with the context assembled and the math shown, gets the owner’s yes before anything moves, then carries the action into your systems and measures what happened next — so every future decision starts smarter than the last.</p>
           <div class="hero__ctas">
             <a class="btn btn--primary btn--lg" href="#pilot">
               Request a 4-week pilot
@@ -86,6 +86,7 @@
           <ul class="hero__chips" aria-label="The guarantees">
             <li>Built around your retail business</li>
             <li>Every decision has a clear rationale</li>
+            <li>A named human approves every action</li>
             <li>Every outcome improves the next decision</li>
           </ul>
         </div>
@@ -110,24 +111,30 @@
               <h3 class="scrolly-step__title">Start with the work already done.</h3>
               <p class="scrolly-step__body">Before you start the day, Outturn reviews your reports, emails, sales and inventory signals. It brings forward the decisions that require your judgment, with the relevant context, commercial exposure and past outcomes already prepared.</p>
             </div>
-            <div class="scrolly-step" id="demo-step-1" data-step="1">
+            <div class="scrolly-step" id="demo-step-leak" data-step="1">
+              <span class="scrolly-step__n scrolly-step__n--leak">Without Outturn · today</span>
+              <h3 class="scrolly-step__title">Today, this decision dies in a thread.</h3>
+              <p class="scrolly-step__body">The alert gets screenshotted into a channel. Someone tags someone; the range review runs long; the thread scrolls. By Friday the vests are still out in 9 stores — no owner, no decision, nothing measured, and next season no one remembers it happened. If the pants sell through in ten weeks, every silent week walks ≈ <b>$2,722 of set sales</b> out the door unmatched.</p>
+              <p class="scrolly-step__hint">This is the leak. The report was never the problem.</p>
+            </div>
+            <div class="scrolly-step" id="demo-step-1" data-step="2">
               <span class="scrolly-step__n">2 · Context reconciled</span>
               <h3 class="scrolly-step__title">See exactly what the decision is built on.</h3>
-              <p class="scrolly-step__body">Outturn brings together the commercial evidence, business rules and relevant history behind each decision. Every signal is linked to its source, every calculation can be inspected, and every trade-off is made explicit.</p>
-              <p class="scrolly-step__hint">Explore the evidence</p>
+              <p class="scrolly-step__body">Outturn brings together the commercial evidence, business rules and relevant history behind each decision. 312 pants × a 25% set rate × $349 = <b>$27,222 of set sales at risk</b> — arithmetic you can recompute from cited rows, never a black-box forecast.</p>
+              <p class="scrolly-step__hint">Try it: tap the source chips, open the calculation.</p>
             </div>
-            <div class="scrolly-step" id="demo-step-2" data-step="2">
+            <div class="scrolly-step" id="demo-step-2" data-step="3">
               <span class="scrolly-step__n">3 · Decision</span>
               <h3 class="scrolly-step__title">Compare the trade-offs. Make the call.</h3>
               <p class="scrolly-step__body">Outturn prepares the commercial decision, brings together the relevant evidence, and makes the trade-offs explicit. Compare the options, apply your judgment, and approve the path forward with confidence.</p>
               <p class="scrolly-step__hint">Try it: compare the options, then approve the decision.</p>
             </div>
-            <div class="scrolly-step" id="demo-step-3" data-step="3">
+            <div class="scrolly-step" id="demo-step-3" data-step="4">
               <span class="scrolly-step__n">4 · Execution</span>
               <h3 class="scrolly-step__title">Carry the decision into the systems that do the work.</h3>
               <p class="scrolly-step__body">The approved decision becomes a transfer draft in <em>your</em> order system, routed to store ops and tracked to completion. Outturn does not replace those systems; it keeps the decision and its progress connected.</p>
             </div>
-            <div class="scrolly-step" id="demo-step-4" data-step="4">
+            <div class="scrolly-step" id="demo-step-4" data-step="5">
               <span class="scrolly-step__n">5 · Outcome measured</span>
               <h3 class="scrolly-step__title">What happened next improves the next decision.</h3>
               <p class="scrolly-step__body">Seven days later, the same record reads the same systems and writes the outcome back. RD-0051 becomes evidence for the next similar decision, building the shared memory your team keeps.</p>
@@ -156,10 +163,10 @@
                 </div>
                 <div class="demo-rail" role="group" aria-label="Decision lifecycle stages">
                   <button type="button" class="is-active" data-go="0">Detected</button>
-                  <button type="button" data-go="1">Context</button>
-                  <button type="button" data-go="2">Decision</button>
-                  <button type="button" data-go="3">Execution</button>
-                  <button type="button" data-go="4">Outcome</button>
+                  <button type="button" data-go="2">Context</button>
+                  <button type="button" data-go="3">Decision</button>
+                  <button type="button" data-go="4">Execution</button>
+                  <button type="button" data-go="5">Outcome</button>
                 </div>
                 <div class="demo-panel__stages">
 
@@ -178,11 +185,30 @@
                       <div class="dqueue__item"><span>01 · Awaiting decision · Women’s Tailoring</span><b>Linen suit vests are out of stock in 9 stores</b><small>$27,222 sales at risk</small></div>
                       <div class="dqueue__item"><span>02 · Awaiting decision · Women’s Footwear</span><b>Summer sandals overstocked in 14 stores</b><small>$18,640 markdown exposure</small></div>
                     </div>
-                    <div class="dstage__actions"><button type="button" class="dbtn dbtn--primary" data-go="1">Open the priority decision →</button></div>
+                    <div class="dstage__actions"><button type="button" class="dbtn dbtn--primary" data-go="1">First — what happens to this today →</button></div>
+                  </div>
+
+                  <!-- Off-loop · the counterfactual: the same decision dying in a thread today -->
+                  <div class="dstage" data-stage="1">
+                    <p class="dstage__kicker dstage__kicker--leak">The same issue · no system</p>
+                    <div class="dthread" aria-label="How this issue plays out in a chat thread today">
+                      <div class="dmsg"><small>09:18 · #trading</small><b>BI bot</b> Vest unavailable in 9 stores. <span class="dattach">📎 screenshot.png</span></div>
+                      <div class="dmsg"><small>09:31</small><b>Merch lead</b> @Alex can you take a look?</div>
+                      <div class="dmsg"><small>09:47</small><b>Alex</b> On it after the range review 👍</div>
+                      <div class="dsys">Tuesday — buried under 43 newer messages</div>
+                      <div class="dsys">Friday — vests still out in 9 stores · no owner · no decision · nothing measured</div>
+                    </div>
+                    <div class="dleak">
+                      <span>Set sales walking out unmatched</span>
+                      <b>≈ $2,722 / silent week</b>
+                    </div>
+                    <p class="dleak__note">$27,222 at risk ÷ a 10-week pants sell-through — an assumption, stated. Outturn computes your number from your rows.</p>
+                    <p class="dguard">No villain here — everyone’s busy. A thread just isn’t a system.</p>
+                    <div class="dstage__actions"><button type="button" class="dbtn dbtn--primary" data-go="2">See the same decision in Outturn →</button></div>
                   </div>
 
                   <!-- Decision summary and reconciled context combined in one stage. -->
-                  <div class="dstage" data-stage="1">
+                  <div class="dstage" data-stage="2">
                     <p class="dstage__kicker">Decision brief · RD-0051 · context reconciled</p>
                     <h4 class="dstage__h">Rebalance linen suit inventory before the weekend.</h4>
                     <p class="dstage__sub dcontext-exposure">9 stores out of stock · <b><span id="dRisk">$27,222</span> set sales at risk</b></p>
@@ -203,13 +229,13 @@
                     <p class="dsource-detail" id="dSourceDetail">POS · 09:12 · 312 pants selling in the 9 stores. 1 in 4 buyers adds the vest.</p>
                     <div class="dstage__actions">
                       <button type="button" class="dbtn" id="dCalcToggle" aria-expanded="false">Inspect the evidence</button>
-                      <button type="button" class="dbtn dbtn--primary" data-go="2">Review the decision →</button>
+                      <button type="button" class="dbtn dbtn--primary" data-go="3">Review the decision →</button>
                     </div>
                     <p class="dmath" id="dMath" hidden>312 pants × 25% set rate × $349 = <b>$27,222 set sales at risk</b><br />Computed in code from the rows above and your own set assumption. Not a demand forecast.</p>
                   </div>
 
                   <!-- Stage 3 · Decision -->
-                  <div class="dstage" data-stage="2">
+                  <div class="dstage" data-stage="3">
                     <p class="dstage__kicker">RD-0051 · human decision required</p>
                     <h4 class="dstage__h">Protect store sales or preserve online availability?</h4>
                     <p class="dstage__sub ddecision-intro">Nine stores are out of stock of linen suit vests while 184 units remain online. Pants are selling as sets, but company policy requires at least 65% of vest inventory to remain online.</p>
@@ -266,7 +292,7 @@
                   </div>
 
                   <!-- Stage 4 · Execution -->
-                  <div class="dstage" data-stage="3">
+                  <div class="dstage" data-stage="4">
                     <p class="dstage__kicker">RD-0051 · routed to execution</p>
                     <h4 class="dstage__h" id="dExecH">The yes became a store-transfer draft in your order system.</h4>
                     <span class="dstatus">Execution in progress</span>
@@ -277,11 +303,11 @@
                       <div class="devent"><small>+7 days</small><b>Outcome will be measured</b><span>Sales and stock read again from the same systems.</span></div>
                     </div>
                     <p class="dguard"><b>No write without a human approval.</b> Outturn routed the approved action into your system and tracks it. It didn’t replace the system.</p>
-                    <div class="dstage__actions"><button type="button" class="dbtn dbtn--primary" data-go="4">See the outcome, 7 days later →</button></div>
+                    <div class="dstage__actions"><button type="button" class="dbtn dbtn--primary" data-go="5">See the outcome, 7 days later →</button></div>
                   </div>
 
                   <!-- Stage 5 · Outcome measured -->
-                  <div class="dstage" data-stage="4">
+                  <div class="dstage" data-stage="5">
                     <p class="dstage__kicker">RD-0051 · 7 days later</p>
                     <b class="doutcome" id="dOutcome">+$18,846</b>
                     <p class="dcaption" id="dCaption">7-day sales from the transferred vests. Observed, not a causal claim. The pants they complete keep selling.</p>
@@ -307,15 +333,43 @@
       </div>
     </section>
 
-    <!-- ===================== THE GAP ===================== -->
-    <section class="section" id="gap" aria-labelledby="gap-h" hidden>
+    <!-- ===================== THE GAP (evidence band) ===================== -->
+    <section class="section" id="gap" aria-labelledby="gap-h">
       <div class="container container--narrow">
         <header class="section-head reveal">
-          <p class="eyebrow">The problem</p>
-          <h2 class="h-section" id="gap-h">Merchandisers spend their days fighting fires instead of improving the business.</h2>
-          <p class="lead">Every day, merchandising teams gather context across reports, spreadsheets, emails, and planning systems. Manual work keeps them reacting to immediate problems instead of making more strategic commercial decisions. Each function works from its own metrics and priorities, so conflicting decisions may never become visible. And because the reasoning, action, and outcome are rarely captured together, the organization starts from scratch each time.</p>
+          <p class="eyebrow">The problem, sized</p>
+          <h2 class="h-section" id="gap-h">The cost of deciding without a system is public and measurable.</h2>
+          <p class="lead">Published research sizes the inventory problem and the manual work around it. The narrower share your team loses after an issue is already visible is what the pilot measures — retailer by retailer, on your numbers.</p>
         </header>
       </div>
+      <div class="container">
+        <div class="wedge__cards stagger">
+          <div class="wedge-card">
+            <p class="wedge-card__label">The cost is measurable</p>
+            <p class="wedge-card__stat">6.5%</p>
+            <p class="wedge-card__text">Inventory distortion — out-of-stocks plus overstocks — costs retail $1.77T a year, equivalent to 6.5% of global retail sales.</p>
+            <p class="wedge-card__ex"><a href="https://www.ihlservices.com/product/fixing-inventory-distortion-whos-winning-whos-failing-whats-working/" target="_blank" rel="noopener">IHL Group · 2025 study</a></p>
+          </div>
+          <div class="wedge-card">
+            <p class="wedge-card__label">The internal share is material</p>
+            <p class="wedge-card__stat">~$18M <span>per $1B revenue</span></p>
+            <p class="wedge-card__text">Illustrative exposure if IHL's global mix scaled proportionally, derived from nearly $500B of the $1.77T attributed to internal retailer inefficiencies.</p>
+            <p class="wedge-card__ex">Derived illustration · not audited impact or claimed recovery</p>
+          </div>
+          <div class="wedge-card">
+            <p class="wedge-card__label">The manual drag is visible</p>
+            <p class="wedge-card__stat">40%</p>
+            <p class="wedge-card__text">of merchant time goes to low-value work, including consolidating systems, repetitive spreadsheets and reconciling data across silos.</p>
+            <p class="wedge-card__ex"><a href="https://www.mckinsey.com/industries/retail/our-insights/merchants-unleashed-how-agentic-ai-transforms-retail-merchandising" target="_blank" rel="noopener">McKinsey Global Merchant Survey · Dec 2025 · n=114</a></p>
+          </div>
+        </div>
+        <blockquote class="pull-quote reveal">Published evidence sizes the exposure. The four-week pilot measures <em>your</em> share of it.</blockquote>
+        <p class="footnote reveal"><a href="the-problem.html">Read the full problem story — why decisions start from scratch →</a></p>
+      </div>
+    </section>
+
+    <!-- rollback archive: previous on-page problem visuals, superseded by the-problem.html -->
+    <section class="section" id="gap-archive" aria-hidden="true" hidden>
       <div class="container">
         <!-- Previous problem visual preserved for quick rollback. -->
         <div class="decision-coverage reveal" aria-label="What receives attention and what gets missed in retail decision making" hidden>
@@ -761,7 +815,7 @@
     </section>
 
     <!-- ===================== HONEST AI ===================== -->
-    <section class="section section--ink" id="honest" aria-labelledby="honest-h" hidden>
+    <section class="section section--ink" id="honest" aria-labelledby="honest-h">
       <div class="container container--narrow">
         <header class="section-head reveal">
           <p class="eyebrow">Honest AI - our favorite sales pitch</p>
@@ -769,45 +823,13 @@
           <p class="lead">AI models are not reliable reasoners - they are excellent accelerators and researchers. So no model ever computes your money. It appears exactly three times: reading and reconciling messy sources, proposing scenarios and rules a human adopts or edits, and narrating results after the numbers are final.</p>
         </header>
 
-        <div class="reveal">
-          <article class="recon-ledger" aria-label="The layer knows when not to act - example">
-            <p class="recon-ledger__q">The part that earns trust: the layer knows when <em>not</em> to act.</p>
-            <div class="ledger">
-              <div class="driver">
-                <span class="driver__label"><b class="lane lane--hold">ON HOLD</b> Miller graphic tee - don't decide on bad numbers</span>
-                <span class="driver__val">$32,640</span>
-                <span class="driver__cite">↳
-                  <button type="button" class="cite-chip" aria-expanded="false" aria-controls="src-ev-2">Chicago's Saturday file: 388 rows of 1,340 expected<span class="chip-hint">show the rows</span></button>
-                  <span class="source-row" id="src-ev-2" hidden>
-                    <span class="source-row__inner"><b>feed_log</b> · Chicago State St · 2026-07-04 · 388 of 1,340 rows · status <b>partial</b> - every decision priced off Chicago waits for the file, not the guess</span>
-                  </span>
-                </span>
-              </div>
-              <div class="driver">
-                <span class="driver__label"><b class="lane lane--human">NEEDS A HUMAN</b> Vega crop cardigan - no rule explains it</span>
-                <span class="driver__val">$22,080</span>
-                <span class="driver__cite">↳
-                  <button type="button" class="cite-chip" aria-expanded="false" aria-controls="src-ev-3">205/week until mid-June · 34/week since<span class="chip-hint">show the rows</span></button>
-                  <span class="source-row" id="src-ev-3" hidden>
-                    <span class="source-row__inner"><b>sales</b> · 205/wk → 34/wk in two weeks · <b>price_changes</b> · none · <b>inventory</b> · sizes full. A style doesn't lose 83% of its sales for no reason - a human looks before anyone prices.</span>
-                  </span>
-                </span>
-              </div>
-              <div class="driver driver--muted">
-                <span class="driver__label">210 styles trading to plan - nothing needed, nobody paged</span>
-                <span class="driver__val">✓</span>
-              </div>
-            </div>
-          </article>
-        </div>
-
         <div class="govbar reveal">
           <span>read-only queries, enforced</span>
           <span>zero model calls in the decision math</span>
           <span>human-approved writes</span>
           <span>append-only audit log</span>
         </div>
-        <p class="honesty reveal">"AI can't reason" is a contested claim, and we don't make it. Ours is narrower and holds up: today's models are not <em>reliable</em> reasoners - so we keep them out of the loop that computes your money entirely. Call it an agentic merchant if you like; we call it code you can audit.</p>
+        <p class="honesty reveal">The part that earns trust: the layer also knows when <em>not</em> to act — partial data feeds hold the decision, unexplained drops go to a human first. <a href="honest-ai.html">Read the full Honest AI pitch, with the worked examples →</a></p>
       </div>
     </section>
 
@@ -817,6 +839,14 @@
         <div class="demo__inner">
           <div class="demo__pitch reveal">
             <h2 class="h-section" id="pilot-h">The 4-week pilot.</h2>
+            <p class="lead">No heavy IT integration. Week one starts from the reports and exports your team already uses.</p>
+            <ul class="demo__perks">
+              <li><b>Week 1</b> — map how your team makes the target decision today; connect the signals from existing reports and exports</li>
+              <li><b>Week 2</b> — open live decision records with cited context, prepared options and a named owner on each</li>
+              <li><b>Week 3</b> — your team runs the daily decision briefs; we watch for gaps without joining the decision loop</li>
+              <li><b>Week 4</b> — review together: decisions surfaced, decision lead time, actions completed, outcomes measured</li>
+            </ul>
+            <p class="demo__reassure">We publish metric definitions, not invented results — the first pilot numbers you'll ever see from us will be your own. No logos or outcome claims here until a customer earns them and consents in writing.</p>
           </div>
 
           <div class="demo__form-wrap reveal">
@@ -906,6 +936,14 @@
             <summary>How does the pilot work?<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
             <p class="faq-item__answer">The four-week pilot focuses on one high-value decision area using your own data and business rules. Together, we measure how much context Outturn prepares, which decisions it surfaces, and what happens after action is taken.</p>
           </details>
+          <details class="faq-item">
+            <summary>Where does our data go?<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <p class="faq-item__answer">Per-tenant isolation, your choice of EU/US residency, a zero-retention option, and no shared models trained on your data. Read-only by default; writes leave as drafts with a named approval. Full audit trail, kill switch. We'll run a security review with your team before any data is connected.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What does it cost?<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <p class="faq-item__answer">The four-week pilot is $6–8K for one decision workflow, normally creditable against the first annual subscription. After that: a predictable, capacity-based subscription, not token pass-through.</p>
+          </details>
         </div>
       </div>
     </section>
@@ -937,6 +975,6 @@
     </div>
   </footer>
 
-  <script src="main.js?v=11"></script>
+  <script src="main.js?v=12"></script>
 </body>
 </html>

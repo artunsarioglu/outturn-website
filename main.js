@@ -461,8 +461,9 @@
     requestAnimationFrame(tick);
   }
 
-  /* Each narration step maps directly to one lifecycle stage. */
-  var RAIL_OF_STEP = [0, 1, 2, 3, 4];
+  /* Narration step → lifecycle rail. Step 1 is the off-loop counterfactual
+     (the same decision dying in a thread), so it maps to no rail stage. */
+  var RAIL_OF_STEP = [0, -1, 1, 2, 3, 4];
 
   function setStage(n) {
     if (n === current && stages[n].classList.contains('is-active')) return;
@@ -475,8 +476,8 @@
       b.classList.toggle('is-done', r === -1 ? i === 0 : i < r);
     });
     steps.forEach(function (s, i) { s.classList.toggle('is-active', i === n); });
-    if (n === 1) countRisk();
-    if (n === 4) playBars();
+    if (n === 2) countRisk();
+    if (n === 5) playBars();
   }
 
   function goStep(n) {
@@ -559,7 +560,7 @@
   /* approve → route → advance to execution */
   $('dApprove').addEventListener('click', function () {
     toast(OPTIONS[option].toast);
-    window.setTimeout(function () { goStep(3); }, 500);
+    window.setTimeout(function () { goStep(4); }, 500);
   });
 
   renderOption();
