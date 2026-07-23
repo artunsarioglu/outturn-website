@@ -341,13 +341,14 @@
     stockout: {
       id: 'RD-0051', type: 'Stockout', alert: 'Monday 08:30 · Power BI alert',
       title: 'The linen suit vest is out of stock in 9 stores.',
+      lead: 'Its matching suit pants keep selling — 1 in 4 pants buyers takes the vest too.',
       thread: [
         ['08:31 · #trading', 'BI bot', 'Vest unavailable in 9 stores.', true],
         ['08:47', 'Merch lead', '@Alex can you take a look?', false]
       ],
       threadEnd: 'Friday — still out · no owner · nothing measured',
       riskLabel: 'Set sales at risk', risk: '$27,222',
-      facts: [['Pants in stores', '312'], ['Set purchase rate', '25%'], ['Vest price', '$349'], ['Vests online', '184']],
+      facts: [['Matching pants selling', '312'], ['Set purchase rate', '25%'], ['Vest price', '$349'], ['Vests online', '184']],
       sources: [
         ['POS sales', 'POS · 09:12 · 312 pants selling in the 9 stores. 1 in 4 buyers adds the vest.'],
         ['Store stock', 'Inventory · 09:14 · Vest on hand across the 9 stores: 0.'],
@@ -355,7 +356,7 @@
         ['Email', 'Email · 08:46 · E-commerce lead: keep at least 65% of vest stock online.'],
         ['Rule KRL-04', 'KRL-04 · v4 · Sellable online stock never falls below 65%.']
       ],
-      math: '312 pants × 25% set rate × $349 = <b>$27,222 set sales at risk</b><br />Computed in code from the rows above. Not a demand forecast.',
+      math: '312 matching pants × 25% set rate × $349 vest price = <b>$27,222 set sales at risk</b><br />Computed in code from the rows above. Not a demand forecast.',
       scenarioLabel: 'Stock to keep online:',
       times: ['09:26', '09:27'],
       options: [
@@ -390,6 +391,7 @@
     phantom: {
       id: 'RD-0047', type: 'Phantom inventory', alert: 'Tuesday 08:54 · allocation plan check',
       title: '480 units are allocated to stores. The warehouse has received 0.',
+      lead: 'The allocation plan counts units that are still on a truck as sellable stock.',
       thread: [
         ['08:55 · #supply', 'Allocation bot', 'ALC-214 ready: 480 units to 8 stores.', false],
         ['09:02', 'Planner', 'Truck is due today — should be fine 🤞', false]
@@ -439,6 +441,7 @@
     promo: {
       id: 'RD-0032', type: 'Promotion', alert: 'Thursday 10:06 · campaign report',
       title: 'The “buy 2” promotion sells — and misses its margin target.',
+      lead: 'Sales are up 18% — but margin runs 11 points under target in 12 stores.',
       thread: [
         ['10:07 · #commercial', 'Campaign bot', 'Sales +18% 🎉', false],
         ['10:24', 'Finance', 'Margin is 11 points under target in 12 stores…', false]
@@ -488,6 +491,7 @@
     parity: {
       id: 'RD-0028', type: 'Price parity', alert: 'Friday 11:22 · price parity check',
       title: 'Web and store prices differ on 37 products.',
+      lead: 'Outside campaigns, web and store prices must match. On these they don’t.',
       thread: [
         ['11:23 · #ecom', 'Support', 'Customers see two prices on the same dress 😬', false],
         ['11:40', 'E-com lead', 'Store list is stale — pricing owns this?', false]
@@ -628,6 +632,7 @@
     var c = CASES[active];
     $('dAlert').textContent = c.alert;
     $('dTitle0').textContent = c.title;
+    $('dLead0').textContent = c.lead;
     $('dThread').innerHTML = c.thread.map(function (m) {
       return '<div class="dmsg"><small>' + m[0] + '</small><b>' + m[1] + '</b> ' + m[2] +
         (m[3] ? ' <span class="dattach">📎 screenshot.png</span>' : '') + '</div>';
